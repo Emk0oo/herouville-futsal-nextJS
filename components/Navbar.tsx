@@ -4,13 +4,13 @@ import logo from '../public/logo.png'
 
 function Navbar() {
   return (
-    <div className="flex flex-row justify-between z-10 absolute">
+    <div className="flex flex-row justify-between z-50 fixed top-0 left-0 right-0">
       <div className="pl-10">
         <Image 
         src={logo}
         alt="Logo du club de futsal de Herouville"
-        width={100}
-        height={100}
+        width={150}
+        height={150}
         />
       </div>
 
@@ -46,7 +46,7 @@ function Navbar() {
             </a>
           </li>
 
-          <li className="p-5 bg-jauneHerouville rectangle">logo</li>
+          <li className="p-5 bg-jauneHerouville rectangle2">logo</li>
         </ul>
       </div>
     </div>
