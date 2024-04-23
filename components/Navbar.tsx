@@ -1,17 +1,19 @@
 import Image from "next/image";
 import React from "react";
-import logo from '../public/logo.png'
+import logo from "../public/logo.png";
 
 function Navbar() {
   return (
     <div className="flex flex-row justify-between z-50 fixed top-0 left-0 right-0">
       <div className="pl-10">
-        <Image 
-        src={logo}
-        alt="Logo du club de futsal de Herouville"
-        width={150}
-        height={150}
-        />
+        <a href="/" className="text-white hover:text-jauneHerouville">
+          <Image
+            src={logo}
+            alt="Logo du club de futsal de Herouville"
+            width={150}
+            height={150}
+          />
+        </a>
       </div>
 
       <div>
