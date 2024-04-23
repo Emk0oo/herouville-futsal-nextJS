@@ -27,7 +27,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div id="Actu" className="w-full h-screen">
+      <div id="Actu" className="w-full h-screen flex justify-center">
         <div  className="bg-actu bg-no-repeat flex justify-center items-center">
           <h1>Nos ACTUALITES</h1>
         </div>
