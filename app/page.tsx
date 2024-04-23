@@ -16,7 +16,14 @@ export default function Home() {
             height={300}
             className="mx-auto"
           />
-          <div className="absolute" style={{ top: '36%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+          <div
+            className="absolute"
+            style={{
+              top: "36%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
             <Image
               src={centerLogo2}
               alt="Logo du club de futsal de Herouville"
@@ -27,14 +34,14 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div id="Actu" className="w-full h-screen flex justify-center">
-        <div  className="bg-actu bg-no-repeat flex justify-center items-center">
-          <h1>Nos ACTUALITES</h1>
+      <div id="Actu" className="w-full h-screen flex justify-center ">
+        <div className="bg-actu bg-no-repeat  w-[75%] h-1/2 rounded-2xl">
+          <div className="flex flex-col justify-center items-center ">
+            <h1>Nos </h1>
+            <h1>ACTUALITES</h1>
+          </div>
         </div>
       </div>
-      
     </main>
   );
 }
-
-
