@@ -10,7 +10,7 @@ import griffe from "../public/griffe.png";
 
 export default function Home() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen ">
       <div className="bg-photo1 w-full h-full flex justify-center items-center relative bg-no-repeat">
         <div>
           <Image
@@ -41,7 +41,7 @@ export default function Home() {
       <div id="Actu" className="w-full h-screen flex justify-center ">
         <div
           id="actuContent"
-          className="bg-actu bg-no-repeat  w-[75%] h-2/3 rounded-2xl"
+          className="bg-actu bg-no-repeat  w-[75%] h-2/3 rounded-2xl mt-[-5%] z-0"
         >
           <div className="flex flex-col justify-center items-center ">
             <h1 className="text-5xl">Nos </h1>
@@ -90,6 +90,19 @@ export default function Home() {
               className="mx-auto"
             />
           </div>
+          <div className="absolute"
+            style={{
+              top: "40%",
+              left: "70%",
+              transform: "translate(-50%, -50%)",
+            }}>
+              <Image
+                src={logo3}
+                alt="Logo du club de futsal de Herouville"
+                width={300}
+                height={300}
+              />
+            </div>
           <div className="flex flex-row">
             <div className="absolute text-white max-w-[30%] left-0 top-0 p-10">
               <h1 className="text-5xl font-bold">Notre Histoire</h1>
@@ -114,19 +127,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="absolute"
-            style={{
-              top: "40%",
-              left: "70%",
-              transform: "translate(-50%, -50%)",
-            }}>
-              <Image
-                src={logo3}
-                alt="Logo du club de futsal de Herouville"
-                width={300}
-                height={300}
-              />
-            </div>
+            
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import pointeur from "../public/pointeur.png";
 
 function Footer() {
   return (
-    <div className="flex flex-col text-bleuNuitHerouville shadow ">
+    <footer className="flex flex-col text-bleuNuitHerouville shadow ">
       <div className="flex flex-col justify-center items-center  ">
         <div>
         <Image
@@ -34,7 +34,7 @@ function Footer() {
           <a href="/">Mentions légales</a>
           <a href="/">Plan du site</a>
         </div>
-    </div>
+    </footer>
   );
 }
 
