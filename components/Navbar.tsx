@@ -18,12 +18,12 @@ function Navbar() {
 
       <div>
         <ul className="flex bg-bleuNuitHerouville border-t-4 border-bleuHerouville text-2xl rectangle ">
-          <li className="px-11 py-9 border-r border-bleuBorder ">
+          <li className="px-11 py-7 border-r border-bleuBorder ">
             <a href="/equipe" className="text-white hover:text-jauneHerouville">
               Equipe
             </a>
           </li>
-          <li className="px-11 py-9 border-r border-bleuBorder">
+          <li className="px-11 py-7 border-r border-bleuBorder">
             <a
               href="/actualites"
               className="text-white hover:text-jauneHerouville"
@@ -31,7 +31,7 @@ function Navbar() {
               Actualités
             </a>
           </li>
-          <li className="px-11 py-9 border-r border-bleuBorder">
+          <li className="px-11 py-7 border-r border-bleuBorder">
             <a
               href="/calendrier"
               className="text-white hover:text-jauneHerouville"
@@ -39,7 +39,7 @@ function Navbar() {
               Calendrier
             </a>
           </li>
-          <li className="px-11 py-9 ">
+          <li className="px-11 py-7 ">
             <a
               href="/boutique"
               className="text-white hover:text-jauneHerouville"
@@ -48,7 +48,7 @@ function Navbar() {
             </a>
           </li>
 
-          <li className="px-11 py-9 bg-jauneHerouville rectangle2">logo</li>
+          <li className="px-11 py-7 bg-jauneHerouville rectangle2">logo</li>
         </ul>
       </div>
     </div>

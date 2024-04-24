@@ -18,6 +18,7 @@ const config: Config = {
       backgroundImage: {
         'photo1': "url('../public/photo1.png')",
         'actu': "url('../public/bg-actu.png')",
+        'histoire': "url('../public/histoire.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
