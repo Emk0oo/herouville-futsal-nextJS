@@ -8,10 +8,6 @@ import actu from "../public/bg-actu.png";
 import actu1 from "../public/actu1.png";
 import griffe from "../public/griffe.png";
 
-// const inter = Inter({
-//   subsets: ['latin'],
-//   variable: '--font-inter',
-// })
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
