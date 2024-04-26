@@ -1,22 +1,32 @@
 import Image from "next/image";
+import { Montserrat } from "next/font/google";
 import React from "react";
 import logo from "../public/logo.png";
 import phone from "../public/telephone.png";
 import pointeur from "../public/pointeur.png";
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
 function Footer() {
   return (
-    <footer className="flex flex-col text-bleuNuitHerouville shadow ">
+    <footer
+      className={
+        " ${montserrat.variable} font-sans  flex flex-col text-bleuNuitHerouville shadow "
+      }
+    >
       <div className="flex flex-col justify-center items-center  ">
         <div>
-        <Image
-          src={logo}
-          alt="Logo du club de futsal de Herouville"
-          width={100}
-          height={100}
-        />
+          <Image
+            src={logo}
+            alt="Logo du club de futsal de Herouville"
+            width={100}
+            height={100}
+          />
         </div>
-        
+
         <div className="flex flex-col gap-2 items-center">
           <h1 className=" font-bold ">Coordonnées du club</h1>
           <div className="flex flex-row gap-2 ">
@@ -31,9 +41,9 @@ function Footer() {
       </div>
 
       <div className="flex flex-row justify-center p-4 gap-2 border-t mt-4 w-full">
-          <a href="/">Mentions légales</a>
-          <a href="/">Plan du site</a>
-        </div>
+        <a href="/">Mentions légales</a>
+        <a href="/">Plan du site</a>
+      </div>
     </footer>
   );
 }

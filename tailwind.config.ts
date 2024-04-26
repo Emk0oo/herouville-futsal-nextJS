@@ -8,13 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-montserrat)', 'sans-serif'],
+      },
       colors: {
         bleuNuitHerouville: "#1D3764",
         bleuHerouville: "#3286C8",
         jauneHerouville: "#FFD400",
         bleuBorder: "#4A5F83",
       },
-
       backgroundImage: {
         'photo1': "url('../public/photo1.png')",
         'actu': "url('../public/bg-actu.png')",
