@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import photo1 from "../public/photo1.png";
@@ -193,6 +194,45 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div id="Calendrier" className="w-full h-screen mt-3">
+        <div
+          id="titreCalendrier"
+          className="flex flex-col justify-center items-center"
+        >
+          <h1 className="text-5xl text-bleuNuitHerouville font-light">
+            Les prochains
+          </h1>
+          <h1 className="text-5xl font-bold font uppercase text-bleuNuitHerouville">
+            matchs
+          </h1>
+        </div>
+
+        <div
+          id="calendrierContent"
+          className="flex flex-row justify-center gap-6 mt-[5%] w-full h-1/3"
+        >
+          <div
+            id="cardCalendrier"
+            className="bg-calendrierCard bg-no-repeat  w-1/4 h-full bg-cover  rounded-2xl shadow-md "
+          >
+            <div className="flex flex-col justify-center items-center p-6 text-center"></div>
+          </div>
+          <div
+            id="cardCalendrier"
+            className="bg-calendrierCard bg-no-repeat  w-1/4 h-full bg-cover  rounded-2xl shadow-md "
+          >
+            <div className="flex flex-col justify-center items-center p-6 text-center"></div>
+          </div>
+        </div>
+        <div id="boutonActualites" className="flex justify-center mt-[3%]">
+          <a
+            className="border-solid border-2 bg-bleuHerouville text-white font-bold  py-2 px-5 rounded-full"
+            href="/calendrier"
+          >
+            Voir le calendrier
+          </a>
         </div>
       </div>
       <div id="newsletter"></div>
