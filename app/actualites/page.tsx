@@ -1,5 +1,7 @@
+import GenericPage from "@/components/GenericPage";
+
 export default function Actualites() {
   return (
-    <h1>Actualites</h1>
+    <GenericPage/>
   );
 }
