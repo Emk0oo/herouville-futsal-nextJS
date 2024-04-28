@@ -15,8 +15,8 @@ const montserrat = Montserrat({
 
 export default function Home() {
   return (
-    <div className={`${montserrat.variable} font-sans w-full h-screen`}  >
-      <div className="bg-photo1 w-full h-full flex justify-center items-center relative bg-no-repeat">
+    <div className={`${montserrat.variable} font-sans w-full `}  >
+      <div className="bg-photo1 w-full h-screen flex justify-center items-center  bg-no-repeat">
         <div>
           <Image
             src={centerLogo1}
@@ -189,6 +189,10 @@ export default function Home() {
         </div>
       </div>
       <div id="newsletter"></div>
+
+      
+    
+      
     </div>
   );
 }
