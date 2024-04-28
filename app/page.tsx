@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Montserrat } from 'next/font/google';
+import { Montserrat } from "next/font/google";
 import photo1 from "../public/photo1.png";
 import centerLogo1 from "../public/div1.png";
 import centerLogo2 from "../public/logo2.png";
@@ -9,13 +9,13 @@ import actu1 from "../public/actu1.png";
 import griffe from "../public/griffe.png";
 
 const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
+  subsets: ["latin"],
+  variable: "--font-montserrat",
 });
 
 export default function Home() {
   return (
-    <div className={`${montserrat.variable} font-sans w-full `}  >
+    <div className={`${montserrat.variable} font-sans w-full `}>
       <div className="bg-photo1 w-full h-screen flex justify-center items-center  bg-no-repeat">
         <div>
           <Image
@@ -50,8 +50,12 @@ export default function Home() {
         >
           <div className="mt-[3%]">
             <div className="flex flex-col justify-center items-center ">
-              <h1 className="text-5xl text-bleuNuitHerouville font-light">Nos </h1>
-              <h1 className="text-5xl font-bold font uppercase text-bleuNuitHerouville">actualités</h1>
+              <h1 className="text-5xl text-bleuNuitHerouville font-light">
+                Nos{" "}
+              </h1>
+              <h1 className="text-5xl font-bold font uppercase text-bleuNuitHerouville">
+                actualités
+              </h1>
             </div>
 
             <div
@@ -118,9 +122,12 @@ export default function Home() {
             </div>
           </div>
           <div id="boutonActualites" className="flex justify-center mt-[5%]">
-            <button className="border-solid border-2 bg-bleuHerouville text-white font-bold mt- py-2 px-5 rounded-full">
+            <a
+              className="border-solid border-2 bg-bleuHerouville text-white font-bold mt- py-2 px-5 rounded-full"
+              href="/actualites"
+            >
               Voir les actualités
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -189,10 +196,6 @@ export default function Home() {
         </div>
       </div>
       <div id="newsletter"></div>
-
-      
-    
-      
     </div>
   );
 }
