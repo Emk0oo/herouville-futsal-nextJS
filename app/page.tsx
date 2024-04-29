@@ -84,7 +84,7 @@ export default function Home() {
               </div>
               <div
                 id="actu2"
-                className="flex flex-col w-1/4 h-1/2 bg-white rounded-2xl shadow-md mt-[5%]"
+                className="flex flex-col w-1/4 h-1/2 bg-white rounded-2xl shadow-md mt-[3%]"
               >
                 <Image
                   src={actu1}
