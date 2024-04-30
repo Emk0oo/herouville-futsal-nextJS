@@ -246,7 +246,7 @@ export default function Home() {
               <h1 className="text-4xl font-bold">NEWSLETTER</h1>
             </div>
             <p className="max-w-[60%]">
-              Restez au courant des dernières actus de l'équipe, inscrivez-vous
+              Restez au courant des dernières actus de l&apos;équipe, inscrivez-vous
               à la newsletter !
             </p>
           </div>
@@ -255,7 +255,7 @@ export default function Home() {
             className=" bg-jauneHerouville text-marron py-3 px-5 rounded-full font-bold text-sm"
             href="/calendrier"
           >
-            S'inscrire
+            S&apos;inscrire
           </a>
         </div>
         </div>
