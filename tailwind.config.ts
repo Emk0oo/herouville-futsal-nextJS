@@ -16,6 +16,7 @@ const config: Config = {
         bleuHerouville: "#3286C8",
         jauneHerouville: "#FFD400",
         bleuBorder: "#4A5F83",
+        marron: "#4C4003",
       },
       backgroundImage: {
         'photo1': "url('../public/photo1.png')",

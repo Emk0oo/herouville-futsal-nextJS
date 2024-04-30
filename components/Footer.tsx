@@ -13,11 +13,11 @@ const montserrat = Montserrat({
 function Footer() {
   return (
     <footer
-      className={`${montserrat.variable} font-sans  text-bleuNuitHerouville shadow `}
+      className={`${montserrat.variable} font-sans  text-bleuNuitHerouville  shadow `}
     >
       <div
         id="content"
-        className="flex justify-center items-center gap-10  border-t border-b py-[10%] "
+        className="flex justify-center items-center gap-16  border-t border-b py-[10%] "
       >
         <div id="image" className="">
           <Image
@@ -27,7 +27,7 @@ function Footer() {
             height={170}
           />
         </div>
-        <div id="contenuLien" className="flex gap-10">
+        <div id="contenuLien" className="flex gap-16">
           <div id="coordonnees" className="flex flex-col gap-2">
             <h1 className=" font-bold ">Coordonnées du club</h1>
             <div className="flex flex-row gap-2 ">
@@ -46,10 +46,12 @@ function Footer() {
           </div>
           <div id="liens" className="flex flex-col gap-2 ">
             <h1 className="font-bold">Liens</h1>
-            <a href="/">Accueil</a>
-            <a href="/">Actualités</a>
-            <a href="/">Calendrier</a>
-            <a href="/">Boutique</a>
+            <div className="flex flex-col ">
+              <a href="/equipe">Equipe</a>
+              <a href="/actualites">Actualités</a>
+              <a href="/calendrier">Calendrier</a>
+              <a href="/boutique">Boutique</a>
+            </div>
           </div>
           <div id="reseaux" className="flex flex-col gap-2 items-center">
             <h1 className="font-bold">Suivez nous !</h1>

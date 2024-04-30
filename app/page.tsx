@@ -235,7 +235,32 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div id="newsletter"></div>
+      <div id="newsletter" className="w-full relative">
+        <div
+          id="newletterCard"
+          className="flex flex-row bg-bleuNuitHerouville w-[40%] mx-auto justify-center items-center rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+        >
+          <div id="textNewsletter" className="flex flex-col  text-white p-6">
+            <div id="titre" className="flex flex-row">
+              <h1 className="text-4xl font-thin">NOTRE </h1>
+              <h1 className="text-4xl font-bold">NEWSLETTER</h1>
+            </div>
+            <p className="max-w-[60%]">
+              Restez au courant des dernières actus de l'équipe, inscrivez-vous
+              à la newsletter !
+            </p>
+          </div>
+          <div id="boutonNewsletter" className="">
+          <a
+            className=" bg-jauneHerouville text-marron py-3 px-5 rounded-full font-bold text-sm"
+            href="/calendrier"
+          >
+            S'inscrire
+          </a>
+        </div>
+        </div>
+       
+      </div>
     </div>
   );
 }
