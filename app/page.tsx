@@ -240,26 +240,23 @@ export default function Home() {
           id="newletterCard"
           className="flex flex-row bg-bleuNuitHerouville w-[40%] mx-auto justify-center items-center rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
         >
-          <div id="textNewsletter" className="flex flex-col  text-white p-6">
-            <div id="titre" className="flex flex-row">
-              <h1 className="text-4xl font-thin">NOTRE </h1>
-              <h1 className="text-4xl font-bold">NEWSLETTER</h1>
+          <div id="newsletterContent" className="flex flex-row w-full justify-center items-center ">
+            <div id="texte" className="flex flex-col w-1/2 p-6 space-y-2">
+              <div className="flex flex-row gap-1">
+              <h1 className="text-3xl text-white">NOTRE</h1>
+              <h1 className="text-3xl text-white font-bold">NEWSLETTER</h1>
+              </div>
+              <p className="text-white">
+              Restez au courant des dernières actus de l’équipe, inscrivez-vous à la newsletter !
+              </p>
             </div>
-            <p className="max-w-[60%]">
-              Restez au courant des dernières actus de l&apos;équipe, inscrivez-vous
-              à la newsletter !
-            </p>
+            <div id="inscrireNewsletter" className="w-1/2 pl-[25%]">
+              <button className=" text-marron  bg-jauneHerouville font-bold py-2 px-5 rounded-full">
+                S&apos;inscrire
+              </button>
+            </div>
           </div>
-          <div id="boutonNewsletter" className="">
-          <a
-            className=" bg-jauneHerouville text-marron py-3 px-5 rounded-full font-bold text-sm"
-            href="/calendrier"
-          >
-            S&apos;inscrire
-          </a>
         </div>
-        </div>
-       
       </div>
     </div>
   );
