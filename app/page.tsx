@@ -124,10 +124,22 @@ export default function Home() {
           </div>
           <div id="boutonActualites" className="flex justify-center mt-[5%]">
             <a
-              className="border-solid border-2 bg-bleuHerouville text-white font-bold mt- py-2 px-5 rounded-full"
+              className="flex flex-row items-center gap-2 border-solid border-2 bg-bleuHerouville text-white font-bold mt- py-2 px-5 rounded-full"
               href="/actualites"
             >
               Voir les actualités
+              <svg
+              width="22"
+              height="12"
+              viewBox="0 0 22 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989593 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM1 6.75H21V5.25H1V6.75Z"
+                fill="white"
+              />
+            </svg>
             </a>
           </div>
         </div>
@@ -228,10 +240,22 @@ export default function Home() {
         </div>
         <div id="boutonActualites" className="flex justify-center mt-[3%]">
           <a
-            className="border-solid border-2 bg-bleuHerouville text-white font-bold  py-2 px-5 rounded-full"
+            className="flex flex-row items-center gap-2 border-solid border-2 bg-bleuHerouville text-white font-bold  py-2 px-5 rounded-full"
             href="/calendrier"
           >
             Voir le calendrier
+            <svg
+              width="22"
+              height="12"
+              viewBox="0 0 22 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989593 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM1 6.75H21V5.25H1V6.75Z"
+                fill="white"
+              />
+            </svg>
           </a>
         </div>
       </div>
@@ -240,19 +264,37 @@ export default function Home() {
           id="newletterCard"
           className="flex flex-row bg-bleuNuitHerouville w-[40%] mx-auto justify-center items-center rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
         >
-          <div id="newsletterContent" className="flex flex-row w-full justify-center items-center ">
+          <div
+            id="newsletterContent"
+            className="flex flex-row w-full justify-center items-center "
+          >
             <div id="texte" className="flex flex-col w-1/2 p-6 space-y-2">
               <div className="flex flex-row gap-1">
-              <h1 className="text-3xl text-white">NOTRE</h1>
-              <h1 className="text-3xl text-white font-bold">NEWSLETTER</h1>
+                <h1 className="text-3xl text-white">NOTRE</h1>
+                <h1 className="text-3xl text-white font-bold">NEWSLETTER</h1>
               </div>
               <p className="text-white">
-              Restez au courant des dernières actus de l’équipe, inscrivez-vous à la newsletter !
+                Restez au courant des dernières actus de l’équipe,
+                inscrivez-vous à la newsletter !
               </p>
             </div>
             <div id="inscrireNewsletter" className="w-1/2 pl-[25%]">
               <button className=" text-marron  bg-jauneHerouville font-bold py-2 px-5 rounded-full">
-                S&apos;inscrire
+                <div className="flex flex-row items-center gap-2">
+                  <p>S&apos;inscrire</p>
+                  <svg
+                    width="22"
+                    height="12"
+                    viewBox="0 0 22 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989593 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM1 6.75H21V5.25H1V6.75Z"
+                      fill="#4C4003"
+                    />
+                  </svg>
+                </div>
               </button>
             </div>
           </div>
