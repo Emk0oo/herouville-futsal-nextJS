@@ -1,9 +1,26 @@
+// ActualiteCard.tsx
 import React from 'react';
+import Image from 'next/image';
 
-function Card({ imageUrl, title, date, link }) {
+interface CardProps {
+  imageUrl: string;
+  title: string;
+  date: string;
+  link: string;
+}
+
+function Card({ imageUrl, title, date, link }: CardProps) {
   return (
     <div className="bg-white rounded-lg shadow flex flex-col items-center text-center">
-      <img src={imageUrl} alt={title} className="rounded-t-lg w-full h-48 object-cover" />
+      <div className="relative w-full h-48 rounded-t-lg">
+        <Image 
+          src={imageUrl} 
+          alt={title} 
+          layout="fill" 
+          objectFit="cover" 
+          className="rounded-t-lg"
+        />
+      </div>
       <div className="p-4">
         <p className="text-sm text-gray-600">{title}</p>
         <p className="text-xs text-gray-500">{date}</p>
