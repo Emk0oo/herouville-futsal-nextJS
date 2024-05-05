@@ -1,6 +1,12 @@
 // dashboard/layout.tsx
 import React from "react";
 import "../globals.css";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 export default function DashboardLayout({
   children,
@@ -10,7 +16,7 @@ export default function DashboardLayout({
   return (
     <html lang="fr">
       <link rel="icon" href="/favicon.ico" />
-      <body>
+      <body className={`${montserrat.variable} font-sans  `}>
         {children}
       </body>
     </html>

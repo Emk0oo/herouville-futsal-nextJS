@@ -16,6 +16,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
