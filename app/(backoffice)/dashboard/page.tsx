@@ -1,12 +1,10 @@
 // dashboard/page.tsx
-import DashboardLayout from '../layout';
+import Dashboard from "@/components/Dashboard";
 
 export default function DashboardPage() {
   return (
-    <DashboardLayout>
-      <h1>Test</h1>
-      <div>Contenu spécifique du tableau de bord</div>
-    </DashboardLayout>
-
+    <>
+      <Dashboard/>
+    </>
   );
 }
