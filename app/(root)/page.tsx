@@ -2,13 +2,12 @@
 import React from "react";
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
-import photo1 from "../public/photo1.png";
-import centerLogo1 from "../public/div1.png";
-import centerLogo2 from "../public/logo2.png";
-import logo3 from "../public/logo3.png";
-import actu from "../public/bg-actu.png";
-import actu1 from "../public/actu1.png";
-import griffe from "../public/griffe.png";
+import centerLogo1 from "@/public/div1.png";
+import centerLogo2 from "@/public/logo2.png";
+import logo3 from "@/public/logo3.png";
+
+import actu1 from "@/public/actu1.png";
+import griffe from "@/public/griffe.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 
