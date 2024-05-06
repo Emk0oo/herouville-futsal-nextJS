@@ -1,22 +1,24 @@
+import CalendarSVG from "../public/calendar.svg";
+
 export const dashboardMenu = [
   {
+    title: "Dashboard",
+    link: "/dashboard",
+    svg: CalendarSVG,
+  },
+  {
     title: "Calendrier",
-    link: "/calendrier",
-    svg: "../public/calendar.svg",
+    link: "/dashboard/calendrier",
+    svg: CalendarSVG,
   },
   {
     title: "Boutique",
-    link: "/boutique",
-    svg: "@public/calendar.svg",
+    link: "/dashboard/boutique",
+    svg: CalendarSVG,
   },
   {
     title: "Equipe",
-    link: "/equipe",
-    svg: "@public/calendar.svg",
-  },
-  {
-    title: "dashboard",
-    link: "/backoffice/dashboard",
-    svg: "@public/calendar.svg",
+    link: "/dashboard/equipe",
+    svg: CalendarSVG,
   },
 ];

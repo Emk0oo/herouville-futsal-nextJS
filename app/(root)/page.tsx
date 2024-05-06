@@ -214,7 +214,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="monSwiper">
+          {/* <div id="monSwiper">
             <Swiper
               slidesPerView={3}
               spaceBetween={30}
@@ -235,7 +235,7 @@ export default function Home() {
               <SwiperSlide>Slide 8</SwiperSlide>
               <SwiperSlide>Slide 9</SwiperSlide>
             </Swiper>
-          </div>
+          </div> */}
         </div>
       </div>
       <div id="Calendrier" className="w-full h-screen mt-3">
