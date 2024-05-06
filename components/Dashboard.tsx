@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { ReactNode } from "react";
 import { useState } from "react";
 import SidebarButton from "./SidebarButton";
 import { dashboardMenu } from "@/constants/outils";
@@ -11,19 +11,18 @@ import path from "path";
 
 const nomDeMarque = "Herouville Futsal";
 
-const Dashboard = () => {
+type DashboardProps = {
+  children: ReactNode;
+};
+
+
+const Dashboard = ({ children }: DashboardProps) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const pathname = usePathname();
-  
+  console.log(pathname);
+  console.log(dashboardMenu)
 
-  const pageNames = [
-    { path: "/dashboard", name: "Dashboard" },
-    { path: "/dashboard/calendrier", name: "Calendrier" },
-    { path: "/dashboard/boutique", name: "Boutique" },
-    { path: "/dashboard/equipe", name: "Equipe" },
-  ];
-
-  const nomPage = pageNames.find((page) => page.path === pathname)?.name;
+  const nomPage = dashboardMenu.find((page) => page.link === pathname)?.title;
   
 
   const toggleSidebar = () => {

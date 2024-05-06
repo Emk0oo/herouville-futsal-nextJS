@@ -2,6 +2,7 @@
 import React from "react";
 import "../globals.css";
 import { Montserrat } from "next/font/google";
+import Dashboard from "@/components/Dashboard";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ export default function DashboardLayout({
     <html lang="fr">
       <link rel="icon" href="/favicon.ico" />
       <body className={`${montserrat.variable} font-sans  `}>
-        {children}
+        <Dashboard>{children}</Dashboard>
       </body>
     </html>
   );
