@@ -1,32 +1,36 @@
 "use client";
 
 import Image from "next/image";
-import React, { useMemo } from "react";
+import React from "react";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import SidebarButton from "./SidebarButton";
 import { dashboardMenu } from "@/constants/outils";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import path from "path";
 
 const nomDeMarque = "Herouville Futsal";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  // const router = useRouter();
-  // const { pathname } = router;
+  const pathname = usePathname();
+  
 
-  const pageNames = {
-    "/dashboard": "Tableau de Bord",
-    "/dashboard/calendrier": "Calendrier",
-    "/dashboard/boutique": "Boutique",
-    "/dashboard/equipe": "Boutique",
-  };
+  const pageNames = [
+    { path: "/dashboard", name: "Dashboard" },
+    { path: "/dashboard/calendrier", name: "Calendrier" },
+    { path: "/dashboard/boutique", name: "Boutique" },
+    { path: "/dashboard/equipe", name: "Equipe" },
+  ];
+
+  const nomPage = pageNames.find((page) => page.path === pathname)?.name;
+  
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   // const nomPage = useMemo(() => pageNames[pathname] || "Page Inconnue", [pathname]);
-
 
   return (
     <main id="dashboard" className="relative w-full h-screen bg-slate-200">
@@ -40,7 +44,7 @@ const Dashboard = () => {
         >
           <div id="titrePage" className="flex items-center gap-2 p-3">
             {/* Affiche le nom de la page */}
-            <h1 className="text-xl font-bold">Dashboard</h1>
+            <h1 className="text-xl font-bold">{nomPage}</h1>
           </div>
         </div>
       </div>
@@ -81,7 +85,7 @@ const Dashboard = () => {
                 title={item.title}
                 link={item.link}
                 isSidebarOpen={isSidebarOpen}
-                isActive={false}
+                isActive={pathname === item.link}
               />
             ))}
           </div>
