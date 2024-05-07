@@ -2,6 +2,7 @@
 import React from "react";
 import "../globals.css";
 import { Montserrat } from "next/font/google";
+import ConnectionCard from "@/components/ConnectionCard";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,7 +17,8 @@ export default function LoginLayout({
   return (
     <html lang="fr">
       <link rel="icon" href="/favicon.ico" />
-      <body className={`${montserrat.variable} font-sans  `}>
+      <body className={`${montserrat.variable} flex font-sans w-full h-screen bg-slate-200 items-center justify-center`}>
+        <ConnectionCard />
         {children}
       </body>
     </html>

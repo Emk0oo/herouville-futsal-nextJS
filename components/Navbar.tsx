@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import React from "react";
 import logo from "../public/logo.png";
+import Link from "next/link";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -87,6 +88,21 @@ function Navbar() {
                   className="object-cover"
                 />
               </a>
+              <Link href="/login">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="6" r="4" fill="currentColor" />
+                  <path
+                    fill="currentColor"
+                    d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5"
+                    opacity=".5"
+                  />
+                </svg>
+              </Link>
             </li>
           </ul>
         </div>
