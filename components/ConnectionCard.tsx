@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import logo from "../public/logo.png";
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
+
 
 const ConnectionCard = () => {
   return (
@@ -28,8 +30,11 @@ const ConnectionCard = () => {
           type="submit"
           className="p-2 bg-bleuNuitHerouville text-white rounded-lg"
         >
-          Se connecter
+          <LoginLink>Sign in</LoginLink>
+
+
         </button>
+        <RegisterLink>Sign up</RegisterLink>
       </div>
     </main>
   );

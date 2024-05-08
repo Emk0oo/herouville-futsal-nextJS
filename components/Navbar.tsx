@@ -3,6 +3,8 @@ import { Montserrat } from "next/font/google";
 import React from "react";
 import logo from "../public/logo.png";
 import Link from "next/link";
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
+
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -103,6 +105,7 @@ function Navbar() {
                   />
                 </svg>
               </Link>
+              
             </li>
           </ul>
         </div>

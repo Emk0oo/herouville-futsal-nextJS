@@ -4,6 +4,8 @@ import "../globals.css";
 import { Montserrat } from "next/font/google";
 import ConnectionCard from "@/components/ConnectionCard";
 
+import Modal from "@/components/Modal";
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",

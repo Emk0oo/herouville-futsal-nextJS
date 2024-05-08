@@ -19,8 +19,7 @@ type DashboardProps = {
 const Dashboard = ({ children }: DashboardProps) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const pathname = usePathname();
-  console.log(pathname);
-  console.log(dashboardMenu)
+
 
   const nomPage = dashboardMenu.find((page) => page.link === pathname)?.title;
   
@@ -90,6 +89,9 @@ const Dashboard = ({ children }: DashboardProps) => {
           </div>
         </div>
       </aside>
+      <div>
+      {children}
+      </div>
     </main>
   );
 };
