@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
@@ -11,11 +11,10 @@ import griffe from "@/public/griffe.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 
-
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
-
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import ButtonLink from "@/components/ButtonLink";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -85,9 +84,7 @@ export default function Home() {
                     Lorem ipsum dolor sit amet consectetur
                   </h1>
                   <p>Publié le 12 avril 2024</p>
-                  <button className="border-solid border-2 border-bleuHerouville text-bleuNuitHerouville font-bold mt- py-2 px-5 rounded-full mt-[5%]">
-                    Lire l article
-                  </button>
+                  <ButtonLink text="Lire l'article" href="/actualites" />
                 </div>
               </div>
               <div
@@ -152,15 +149,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div id="NotreHistoire" className="relative w-full h-screen">
+      <div id="NotreHistoire" className="relative w-full h-screen p-4 md:p-0">
         <div className="bg-histoire bg-no-repeat w-full h-full relative flex flex-wrap">
           <div
-            className="absolute"
-            style={{
-              top: "0%",
-              left: "10%",
-              transform: "translate(-50%, -50%)",
-            }}
+            className="absolute transform -translate-x-1/2 -translate-y-1/2 md:visible invisible"
+            style={{ top: "10%", left: "10%" }}
           >
             <Image
               src={griffe}
@@ -171,12 +164,8 @@ export default function Home() {
             />
           </div>
           <div
-            className="absolute"
-            style={{
-              top: "40%",
-              left: "70%",
-              transform: "translate(-50%, -50%)",
-            }}
+            className="absolute transform -translate-x-1/2 -translate-y-1/2 md:visible invisible"
+            style={{ top: "40%", left: "70%" }}
           >
             <Image
               src={logo3}
@@ -185,120 +174,98 @@ export default function Home() {
               height={300}
             />
           </div>
-          <div className="flex flex-row">
-            <div className="ml-[18vw] mt-[5vw] text-white max-w-[40%]  p-10">
+          <div className="flex flex-row w-full justify-center  md:mt-0">
+            <div className="ml-0 md:ml-[1vw] mt-8 md:mt-[5vw] text-white max-w-full md:max-w-[40%] p-4 md:p-10">
               <div className="flex flex-col">
-                <h1 className="text-5xl ">Notre</h1>
-                <h1 className="text-5xl font-bold">Histoire</h1>
+                <h1 className="text-4xl md:text-5xl">Notre</h1>
+                <h1 className="text-4xl md:text-5xl font-bold">Histoire</h1>
               </div>
 
-              <div className="space-y-4 mt-8">
+              <div className="space-y-4 mt-4 md:mt-8">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                  repellendus non fugit hic asperiores amet, aspernatur
-                  molestiae quibusdam sed corrupti, natus aliquid a
-                  exercitationem, quo porro alias ratione architecto! Nemo!
+                  Hérouville Futsal est un club de futsal français situé à
+                  Hérouville-Saint-Clair, dans le département du Calvados. Fondé
+                  en 2010, le club est initialement créé comme section futsal du
+                  Sporting Club hérouvillais, un club de football régional.
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                  repellendus non fugit hic asperiores amet, aspernatur
-                  molestiae quibusdam sed corrupti, natus aliquid a
-                  exercitationem, quo porro alias ratione architecto! Nemo!
+                  Notre club de Futsal Hérouville Saint-Clair, depuis ses
+                  débuts, incarne l’esprit du jeu, de la communauté et de la
+                  compétition. Fondé sur des valeurs de passion, de solidarité
+                  et de dépassement de soi, notre club a su créer des liens
+                  solides au sein de notre ville et au-delà.
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                  repellendus non fugit hic asperiores amet, aspernatur
-                  molestiae quibusdam sed corrupti, natus aliquid a
-                  exercitationem, quo porro alias ratione architecto! Nemo!
+                  Animés par leur amour du jeu , un petit groupe d’amateurs a
+                  uni ses forces pour créer une véritable institution dédiée à
+                  la promotion du Futsal et à l’épanouissement de ses
+                  pratiquants.
                 </p>
               </div>
             </div>
           </div>
-          {/* <div id="monSwiper">
-            <Swiper
-              slidesPerView={3}
-              spaceBetween={30}
-              freeMode={true}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[FreeMode, Pagination]}
-              className="mySwiper"
-            >
-              <SwiperSlide>Slide 1</SwiperSlide>
-              <SwiperSlide>Slide 2</SwiperSlide>
-              <SwiperSlide>Slide 3</SwiperSlide>
-              <SwiperSlide>Slide 4</SwiperSlide>
-              <SwiperSlide>Slide 5</SwiperSlide>
-              <SwiperSlide>Slide 6</SwiperSlide>
-              <SwiperSlide>Slide 7</SwiperSlide>
-              <SwiperSlide>Slide 8</SwiperSlide>
-              <SwiperSlide>Slide 9</SwiperSlide>
-            </Swiper>
-          </div> */}
         </div>
       </div>
-      <div id="Calendrier" className="w-full h-screen mt-3">
-        <div
-          id="titreCalendrier"
-          className="flex flex-col justify-center items-center"
-        >
-          <h1 className="text-5xl text-bleuNuitHerouville font-light">
-            Les prochains
-          </h1>
-          <h1 className="text-5xl font-bold font uppercase text-bleuNuitHerouville">
-            matchs
-          </h1>
-        </div>
+      <div id="Calendrier" className="w-full h-screen mt-3 p-4 md:p-0">
+  <div id="titreCalendrier" className="flex flex-col justify-center items-center">
+    <h1 className="text-4xl md:text-5xl text-bleuNuitHerouville font-light">
+      Les prochains
+    </h1>
+    <h1 className="text-4xl md:text-5xl font-bold uppercase text-bleuNuitHerouville">
+      matchs
+    </h1>
+  </div>
 
-        <div
-          id="calendrierContent"
-          className="flex flex-row justify-center gap-6 mt-[5%] w-full h-1/3"
-        >
-          <div
-            id="cardCalendrier"
-            className="bg-calendrierCard bg-no-repeat  w-1/4 h-full bg-cover  rounded-2xl shadow-md "
-          >
-            <div className="flex flex-col justify-center items-center p-6 text-center"></div>
-          </div>
-          <div
-            id="cardCalendrier"
-            className="bg-calendrierCard bg-no-repeat  w-1/4 h-full bg-cover  rounded-2xl shadow-md "
-          >
-            <div className="flex flex-col justify-center items-center p-6 text-center"></div>
-          </div>
-        </div>
-        <div id="boutonActualites" className="flex justify-center mt-[3%]">
-          <a
-            className="flex flex-row items-center gap-2 border-solid border-2 bg-bleuHerouville text-white font-bold  py-2 px-5 rounded-full"
-            href="/calendrier"
-          >
-            Voir le calendrier
-            <svg
-              width="22"
-              height="12"
-              viewBox="0 0 22 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989593 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM1 6.75H21V5.25H1V6.75Z"
-                fill="white"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div id="newsletter" className="w-full relative">
+  <div id="calendrierContent" className="flex flex-col md:flex-row justify-center gap-6 mt-6 w-full h-auto md:h-1/3">
+    <div
+      id="cardCalendrier"
+      className="bg-calendrierCard bg-no-repeat w-full md:w-1/4 h-60 md:h-full bg-cover rounded-2xl shadow-md"
+    >
+      <div className="flex flex-col justify-center items-center p-6 text-center"></div>
+    </div>
+    <div
+      id="cardCalendrier"
+      className="bg-calendrierCard bg-no-repeat w-full md:w-1/4 h-60 md:h-full bg-cover rounded-2xl shadow-md"
+    >
+      <div className="flex flex-col justify-center items-center p-6 text-center"></div>
+    </div>
+  </div>
+  
+  <div id="boutonActualites" className="flex justify-center mt-6">
+    <a
+      className="flex flex-row items-center gap-2 border-solid border-2 bg-bleuHerouville text-white font-bold py-2 px-5 rounded-full"
+      href="/calendrier"
+    >
+      Voir le calendrier
+      <svg
+        width="22"
+        height="12"
+        viewBox="0 0 22 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989593 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM1 6.75H21V5.25H1V6.75Z"
+          fill="white"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+      <div id="newsletter" className="w-full relative p-4">
         <div
           id="newletterCard"
-          className="flex flex-row bg-bleuNuitHerouville w-[40%] mx-auto justify-center items-center rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 "
+          className="flex flex-col md:flex-row bg-bleuNuitHerouville w-full md:w-[80%] lg:w-[60%] xl:w-[50%] mx-auto justify-center items-center rounded-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6"
         >
           <div
             id="newsletterContent"
-            className="flex flex-row w-full justify-center items-center "
+            className="flex flex-col md:flex-row w-full justify-center items-center"
           >
-            <div id="texte" className="flex flex-col w-1/2 p-6 space-y-2">
+            <div
+              id="texte"
+              className="flex flex-col w-full md:w-1/2 p-6 space-y-2"
+            >
               <div className="flex flex-row gap-1">
                 <h1 className="text-3xl text-white">NOTRE</h1>
                 <h1 className="text-3xl text-white font-bold">NEWSLETTER</h1>
@@ -308,9 +275,12 @@ export default function Home() {
                 inscrivez-vous à la newsletter !
               </p>
             </div>
-            <div id="inscrireNewsletter" className="w-1/2 pl-[25%]">
-              <button className=" text-marron  bg-jauneHerouville font-bold py-2 px-5 rounded-full">
-                <div className="flex flex-row items-center gap-2">
+            <div
+              id="inscrireNewsletter"
+              className="w-full md:w-1/2 mt-4 md:mt-0 md:pl-[25%]"
+            >
+              <button className="text-marron bg-jauneHerouville font-bold py-2 px-5 rounded-full w-full md:w-auto">
+                <div className="flex flex-row items-center justify-center gap-2">
                   <p>S&apos;inscrire</p>
                   <svg
                     width="22"
