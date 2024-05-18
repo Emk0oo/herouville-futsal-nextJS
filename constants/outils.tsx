@@ -4,21 +4,21 @@ export const dashboardMenu = [
   {
     title: "Dashboard",
     link: "/dashboard",
-    svg: CalendarSVG,
+    icon: CalendarSVG,
   },
   {
     title: "Calendrier",
     link: "/dashboard/calendrier",
-    svg: CalendarSVG,
+    icon: CalendarSVG,
   },
   {
     title: "Boutique",
     link: "/dashboard/boutique",
-    svg: CalendarSVG,
+    icon: CalendarSVG,
   },
   {
     title: "Equipe",
     link: "/dashboard/equipe",
-    svg: CalendarSVG,
+    icon: CalendarSVG,
   },
 ];
