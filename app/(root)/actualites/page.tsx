@@ -1,6 +1,7 @@
 "use client";
 import ActualiteCard from "@/components/ActualiteCard";
 import Pagination from "@/components/Pagination";
+import Head from "next/head";
 import React, { useState } from "react";
 
 const cardsData = [
@@ -44,6 +45,17 @@ export default function Actualites() {
 
   return (
     <>
+      <Head>
+        <title>Actualités - Mon Site</title>
+        <meta
+          name="description"
+          content="Consultez les dernières actualités de notre site."
+        />
+        <meta
+          name="keywords"
+          content="actualités, news, articles, informations"
+        />
+      </Head>
       <div className="flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
           {getPaginatedData().map((card, index) => (
