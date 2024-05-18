@@ -83,7 +83,7 @@ const Dashboard = ({ children }: DashboardProps) => {
                 link={item.link}
                 isSidebarOpen={isSidebarOpen}
                 isActive={pathname === item.link}
-                icon={item.icon} // Utiliser l'icône SVG en tant que prop
+                // icon={item.icon} // Utiliser l'icône SVG en tant que prop
               />
             ))}
           </div>

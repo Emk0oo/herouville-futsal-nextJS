@@ -5,10 +5,10 @@ type SidebarButtonProps = {
   link: string;
   isActive: boolean;
   isSidebarOpen: boolean;
-  icon: React.ReactNode;  // Icone en tant que prop ReactNode
+  // icon: React.ReactNode;  // Icone en tant que prop ReactNode
 };
 
-const SidebarButton = ({ title, link, isSidebarOpen, isActive, icon }: SidebarButtonProps) => {
+const SidebarButton = ({ title, link, isSidebarOpen, isActive }: SidebarButtonProps) => {
   return (
     <a
       href={link}
@@ -16,7 +16,7 @@ const SidebarButton = ({ title, link, isSidebarOpen, isActive, icon }: SidebarBu
         isSidebarOpen ? "w-full justify-start" : "w-16 justify-center"
       } ${isActive ? "bg-indigo-500 text-white" : " bg-white"}`}
     >
-      {icon}
+      {/* {icon} */}
       {isSidebarOpen && <span>{title}</span>}
     </a>
   );
