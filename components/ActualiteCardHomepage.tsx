@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import ButtonLink from './ButtonLink';
 
-interface ArticleCardProps {
+interface ActualiteCardHomepageProps {
   imageSrc: string;
   altText: string;
   title: string;
@@ -12,7 +12,7 @@ interface ArticleCardProps {
   customClass?: string;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ imageSrc, altText, title, date, href, customClass }) => {
+const ActualiteCardHomepage: React.FC<ActualiteCardHomepageProps> = ({ imageSrc, altText, title, date, href, customClass }) => {
   return (
     <div className={`flex flex-col w-full md:w-1/4 h-auto md:h-1/2 bg-white rounded-2xl shadow-md ${customClass}`}>
       <Image
@@ -33,4 +33,4 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ imageSrc, altText, title, dat
   );
 };
 
-export default ArticleCard;
+export default ActualiteCardHomepage;

@@ -3,14 +3,14 @@ import React from "react";
 import Image from "next/image";
 import ButtonLink from "./ButtonLink";
 
-interface CardProps {
+interface ActualiteCardProps {
   imageUrl: string;
   title: string;
   date: string;
   link: string;
 }
 
-function Card({ imageUrl, title, date, link }: CardProps) {
+function ActualiteCard({ imageUrl, title, date, link }: ActualiteCardProps) {
   return (
     <div className="bg-white rounded-lg shadow flex flex-col items-center text-center">
       <div className="relative w-full h-48 rounded-t-lg">
@@ -33,4 +33,4 @@ function Card({ imageUrl, title, date, link }: CardProps) {
   );
 }
 
-export default Card;
+export default ActualiteCard;

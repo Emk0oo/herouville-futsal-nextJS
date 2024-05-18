@@ -8,7 +8,7 @@ import logo3 from "@/public/logo3.png";
 import actu1 from "@/public/actu1.png";
 import griffe from "@/public/griffe.png";
 
-import ArticleCard from "@/components/ArticleHomeCard";
+import ActualiteCardHomepage from "@/components/ActualiteCardHomepage";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -70,23 +70,23 @@ export default function Home() {
               id="lesActu"
               className="flex flex-col md:flex-row h-[70%] justify-center gap-6 mt-[5%]"
             >
-              <ArticleCard
-                imageSrc="/path/to/actu1.jpg"
+              <ActualiteCardHomepage
+                imageSrc="/actu1.png"
                 altText="Logo du club de futsal de Herouville"
                 title="Lorem ipsum dolor sit amet consectetur"
                 date="12 avril 2024"
                 href="/actualites"
               />
-              <ArticleCard
-                imageSrc="/path/to/actu1.jpg"
+              <ActualiteCardHomepage
+                imageSrc="/actu1.png"
                 altText="Logo du club de futsal de Herouville"
                 title="Lorem ipsum dolor sit amet consectetur"
                 date="12 avril 2024"
                 href="/actualites"
-                customClass="md:mt-2"
+                customClass="md:mt-5"
               />
-              <ArticleCard
-                imageSrc="/path/to/actu1.jpg"
+              <ActualiteCardHomepage
+                imageSrc="/actu1.png"
                 altText="Logo du club de futsal de Herouville"
                 title="Lorem ipsum dolor sit amet consectetur"
                 date="12 avril 2024"

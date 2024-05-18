@@ -1,100 +1,28 @@
 "use client";
-import Card from "@/components/ActualiteCard";
-import GenericPage from "@/components/GenericPage";
+import ActualiteCard from "@/components/ActualiteCard";
 import Pagination from "@/components/Pagination";
 import React, { useState } from "react";
 
 const cardsData = [
   {
-    imageUrl: "/path_to_image1.jpg",
+    imageUrl: "/actu1.png",
     title: "Lorem ipsum dolor sit amet consectetur",
     date: "Publié le: 12 avril 2023",
     link: "/actualites/1",
   },
   {
-    imageUrl: "/path_to_image2.jpg",
+    imageUrl: "/photo1.png",
     title: "Lorem ipsum dolor sit amet consectetur",
     date: "Publié le: 10 avril 2023",
-    link: "/actualites/1",
+    link: "/actualites/2",
   },
   {
-    imageUrl: "/path_to_image3.jpg",
+    imageUrl: "/histoire.png",
     title: "Lorem ipsum dolor sit amet consectetur",
     date: "Publié le: 8 avril 2023",
-    link: "/actualites/1",
+    link: "/actualites/3",
   },
-  {
-    imageUrl: "/path_to_image1.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 12 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image2.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 10 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image3.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 8 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image1.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 12 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image2.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 10 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image3.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 8 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image1.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 12 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image2.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 10 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image3.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 8 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image1.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 12 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image2.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 10 avril 2023",
-    link: "/actualites/1",
-  },
-  {
-    imageUrl: "/path_to_image3.jpg",
-    title: "Lorem ipsum dolor sit amet consectetur",
-    date: "Publié le: 8 avril 2023",
-    link: "/actualites/1",
-  },
+  // Ajoutez d'autres articles si nécessaire
 ];
 
 const CARDS_PER_PAGE = 12;
@@ -119,7 +47,7 @@ export default function Actualites() {
       <div className="flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
           {getPaginatedData().map((card, index) => (
-            <Card
+            <ActualiteCard
               key={index}
               imageUrl={card.imageUrl}
               title={card.title}
