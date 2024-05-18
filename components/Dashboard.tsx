@@ -15,15 +15,13 @@ type DashboardProps = {
   children: ReactNode;
 };
 
-
 const Dashboard = ({ children }: DashboardProps) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const pathname = usePathname();
   console.log(pathname);
-  console.log(dashboardMenu)
+  console.log(dashboardMenu);
 
   const nomPage = dashboardMenu.find((page) => page.link === pathname)?.title;
-  
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -85,6 +83,7 @@ const Dashboard = ({ children }: DashboardProps) => {
                 link={item.link}
                 isSidebarOpen={isSidebarOpen}
                 isActive={pathname === item.link}
+                icon={item.icon} // Utiliser l'icône SVG en tant que prop
               />
             ))}
           </div>

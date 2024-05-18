@@ -1,7 +1,12 @@
-import React from 'react'
+import GenericPage from "@/components/GenericPage";
+import React from "react";
 
-export default function Boutique() {
+const Boutique = () => {
   return (
-    <h1>Boutique</h1>
-  )
-}
+    <GenericPage>
+      <div></div>
+    </GenericPage>
+  );
+};
+
+export default Boutique;

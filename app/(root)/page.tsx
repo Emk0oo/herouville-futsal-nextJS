@@ -83,7 +83,7 @@ export default function Home() {
                 title="Lorem ipsum dolor sit amet consectetur"
                 date="12 avril 2024"
                 href="/actualites"
-                customClass="mt-[2%] md:mt-0"
+                customClass="md:mt-2"
               />
               <ArticleCard
                 imageSrc="/path/to/actu1.jpg"

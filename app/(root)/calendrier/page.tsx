@@ -1,7 +1,14 @@
-import React from 'react'
+import GenericPage from "@/components/GenericPage";
+import React from "react";
 
-export default function Calendrier() {
+const Calendrier = () => {
   return (
-    <h1>Calendrier</h1>
-  )
-}
+    <GenericPage>
+            <div></div>
+
+      {/* Contenu spécifique à la page Calendrier */}
+    </GenericPage>
+  );
+};
+
+export default Calendrier;

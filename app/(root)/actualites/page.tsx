@@ -4,6 +4,7 @@ import GenericPage from "@/components/GenericPage";
 import Pagination from "@/components/Pagination";
 import React, { useState } from "react";
 
+
 const cardsData = [
   {
     imageUrl: "/path_to_image1.jpg",
@@ -100,7 +101,6 @@ const cardsData = [
 const CARDS_PER_PAGE = 12;
 
 export default function Actualites() {
-  const pageTitle = "Actualités";
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const totalPages = Math.ceil(cardsData.length / CARDS_PER_PAGE);
@@ -116,7 +116,7 @@ export default function Actualites() {
   };
 
   return (
-    <GenericPage title={pageTitle}>
+    <GenericPage>
       <div className="flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
           {getPaginatedData().map((card, index) => (

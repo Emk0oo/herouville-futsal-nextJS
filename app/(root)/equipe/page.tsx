@@ -1,7 +1,13 @@
-import React from 'react'
+import GenericPage from "@/components/GenericPage";
+import React from "react";
 
-export default function Equipe() {
+const Equipe = () => {
   return (
-    <h1>Equipe</h1>
-  )
-}
+    <GenericPage>
+      <div></div>
+      {/* Contenu spécifique à la page Équipe */}
+    </GenericPage>
+  );
+};
+
+export default Equipe;
