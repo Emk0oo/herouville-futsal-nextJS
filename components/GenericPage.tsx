@@ -2,7 +2,7 @@
 import React from "react";
 import { Montserrat } from "next/font/google";
 import { usePathname } from "next/navigation";
-import usePageTitle from "@/utils/usePageTitle"; // Assurez-vous que le hook est importé
+import usePageTitle from "@/utils/usePageTitle"; 
 
 const montserrat = Montserrat({
   subsets: ["latin"],
