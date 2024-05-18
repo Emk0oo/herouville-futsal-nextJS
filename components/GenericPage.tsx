@@ -24,6 +24,7 @@ const GenericPage = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
         <div className="flex-grow p-4 overflow-auto">
+          
           {children}
         </div>
       </div>
