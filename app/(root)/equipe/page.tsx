@@ -1,32 +1,38 @@
 import GenericPage from "@/components/GenericPage";
+import PlayerCard from "@/components/PlayerCard";
 import React from "react";
+
+const playerAPI = [
+  { role: "Gardien", name: "Leo", surname: "Messi", number: 9 },
+  { role: "Défenseur", name: "Cristiano", surname: "Ronaldo", number: 7 },
+  { role: "Milieu", name: "Kylian", surname: "Mbappé", number: 10 },
+  { role: "Attaquant", name: "Neymar", surname: "Jr", number: 11 },
+  { role: "Milieu", name: "Lionel", surname: "Messi", number: 9 },
+  { role: "Défenseur", name: "Cristiano", surname: "Ronaldo", number: 7 },
+  { role: "Milieu", name: "Kylian", surname: "Mbappé", number: 10 },
+  { role: "Attaquant", name: "Neymar", surname: "Jr", number: 11 },
+  { role: "Milieu", name: "Lionel", surname: "Messi", number: 9 },
+  { role: "Défenseur", name: "Cristiano", surname: "Ronaldo", number: 7 },
+  { role: "Milieu", name: "Kylian", surname: "Mbappé", number: 10 },
+  { role: "Attaquant", name: "Neymar", surname: "Jr", number: 11 },
+];
 
 const Equipe = () => {
   return (
     <>
       <div
         id="equipeContent"
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 px-2 mt-5"
       >
-        <div
-          id="playerCard"
-          className="flex flex-col justify-between items-center h-80 w-3/4 md:w-2/3 bg-blue-300 mx-auto rounded-lg"
-        >
-          <div id="pillRole" className="mt-[-5%]">
-            <h1 className="text-marron font-bold text-center bg-jauneHerouville px-4 py-1 rounded-full">
-              Gardien
-            </h1>
-          </div>
-          <div id="playerInfo" className="flex w-5/6 px-3 py-1 bg-bleuHerouville text-white justify-between text-xl rounded-lg mb-2">
-            <div id="playerName" className="flex flex-col w-1/2 ">
-              <p id="playerName">Leo</p>
-              <p id="playerName" className="font-bold">Messi</p>
-            </div>
-            <div id="playerNumber" className="flex flex-col w-1/2 text-end justify-center">
-              <p id="playerNumberShirt" className="font-bold text-jauneHerouville">9</p>
-            </div>
-          </div>
-        </div>
+        {playerAPI.map((player, index) => (
+          <PlayerCard
+            key={index}
+            role={player.role}
+            name={player.name}
+            surname={player.surname}
+            number={player.number}
+          />
+        ))}
       </div>
     </>
   );
