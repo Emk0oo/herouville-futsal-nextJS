@@ -19,7 +19,6 @@ export default function RootLayout({
     <html lang="fr">
       <link rel="icon" href="/favicon.ico" />
       <body>
-        <MetadataWrapper>
           <Navbar />
           {isHomepage ? (
             children
@@ -29,7 +28,6 @@ export default function RootLayout({
             </GenericPage>
           )}
           <Footer />
-        </MetadataWrapper>
       </body>
     </html>
   );
