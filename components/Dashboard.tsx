@@ -1,13 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import React, { ReactNode } from "react";
-import { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import SidebarButton from "./SidebarButton";
 import { dashboardMenu } from "@/constants/outils";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-import path from "path";
+import DashboardContainer from "./DashboardContainer";
 
 const nomDeMarque = "Herouville Futsal";
 
@@ -18,16 +16,12 @@ type DashboardProps = {
 const Dashboard = ({ children }: DashboardProps) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const pathname = usePathname();
-  console.log(pathname);
-  console.log(dashboardMenu);
 
   const nomPage = dashboardMenu.find((page) => page.link === pathname)?.title;
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-
-  // const nomPage = useMemo(() => pageNames[pathname] || "Page Inconnue", [pathname]);
 
   return (
     <main id="dashboard" className="relative w-full h-screen bg-slate-200">
@@ -40,7 +34,6 @@ const Dashboard = ({ children }: DashboardProps) => {
           }`}
         >
           <div id="titrePage" className="flex items-center gap-2 p-3">
-            {/* Affiche le nom de la page */}
             <h1 className="text-xl font-bold">{nomPage}</h1>
           </div>
         </div>
@@ -82,13 +75,23 @@ const Dashboard = ({ children }: DashboardProps) => {
                 title={item.title}
                 link={item.link}
                 isSidebarOpen={isSidebarOpen}
-                isActive={pathname === item.link}
-                // icon={item.icon} // Utiliser l'icône SVG en tant que prop
+                isActive={
+                  pathname === item.link 
+                }
               />
             ))}
           </div>
         </div>
       </aside>
+
+      <div
+        id="contentDashboard"
+        className={`absolute top-[10%] transition-all duration-300 bg-white  ${
+          isSidebarOpen ? "left-[16.5%] w-[83%]" : "left-[5%] w-[95%]"
+        } h-[90%] bg-slate-100 p-4`}
+      >
+        <DashboardContainer>{children}</DashboardContainer>
+      </div>
     </main>
   );
 };

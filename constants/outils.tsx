@@ -17,6 +17,11 @@ export const dashboardMenu = [
     // icon: CalendarSVG,
   },
   {
+    title: "Actualités",
+    link: "/dashboard/actualites",
+    // icon: CalendarSVG,
+  },
+  {
     title: "Equipe",
     link: "/dashboard/equipe",
     // icon: CalendarSVG,
