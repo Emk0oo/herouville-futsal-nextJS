@@ -1,9 +1,23 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const path = require('path');
 const articleController = require('../controllers/article.controller');
 
+// Configuration de Multer pour stocker les images dans le dossier public
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.join(__dirname, '../../public/'));
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname); // Conserve le nom original du fichier
+    }
+});
+
+const upload = multer({ storage: storage });
+
 // Create a new article
-router.post('/', articleController.createArticle);
+router.post('/', upload.single('image'), articleController.createArticle);
 
 // Get all articles
 router.get('/', articleController.getArticles);

@@ -24,7 +24,7 @@ const Dashboard = ({ children }: DashboardProps) => {
   };
 
   return (
-    <main id="dashboard" className="relative w-full h-screen bg-slate-200">
+    <main id="dashboard" className="relative w-full h-screen bg-slate-400">
       {/* Header */}
       <div id="header" className="absolute w-full h-[10%] bg-white z-10">
         <div

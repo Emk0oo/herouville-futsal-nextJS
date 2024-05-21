@@ -12,7 +12,7 @@ interface ActualiteCardProps {
 
 function ActualiteCard({ imageUrl, title, date, link }: ActualiteCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow flex flex-col items-center text-center">
+    <div className="bg-white rounded-lg shadow flex flex-col items-center text-center w-5/6 h-full justify-center mx-auto">
       <div className="relative w-full h-48 rounded-t-lg">
         <Image
           src={imageUrl}
@@ -22,10 +22,10 @@ function ActualiteCard({ imageUrl, title, date, link }: ActualiteCardProps) {
           className="rounded-t-lg"
         />
       </div>
-      <div className="p-4">
-        <p className="text-sm text-gray-600">{title}</p>
+      <div className="p-4 h-52">
+        <p className=" text-bleuNuitHerouville font-bold">{title}</p>
         <p className="text-xs text-gray-500">{date}</p>
-        <div className="mt-5">
+        <div className="mt-14">
           <ButtonLink text="Lire l'article" href={link} className="p-6" />
         </div>
       </div>
