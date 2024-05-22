@@ -1,12 +1,19 @@
-// Actualites.js
-"use client"
+"use client";
+
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
+interface Article {
+  id: number;
+  title: string;
+  author: string;
+  date: string;
+}
+
 export default function Actualites() {
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -15,10 +22,14 @@ export default function Actualites() {
         if (!response.ok) {
           throw new Error("Failed to fetch articles");
         }
-        const data = await response.json();
+        const data: Article[] = await response.json();
         setArticles(data);
       } catch (err) {
-        setError(err.message);
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
       } finally {
         setIsLoading(false);
       }
@@ -27,7 +38,7 @@ export default function Actualites() {
     fetchArticles();
   }, []);
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: number) => {
     try {
       const response = await fetch(`http://localhost:4000/article/${id}`, {
         method: "DELETE",
@@ -37,7 +48,11 @@ export default function Actualites() {
       }
       setArticles(articles.filter(article => article.id !== id));
     } catch (err) {
-      setError(err.message);
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred");
+      }
     }
   };
 
@@ -61,13 +76,13 @@ export default function Actualites() {
               <tbody className="text-gray-600 text-sm font-light">
                 {isLoading ? (
                   <tr>
-                    <td colSpan="4" className="text-center py-3">
+                    <td colSpan={4} className="text-center py-3">
                       Loading...
                     </td>
                   </tr>
                 ) : error ? (
                   <tr>
-                    <td colSpan="4" className="text-center py-3 text-red-500">
+                    <td colSpan={4} className="text-center py-3 text-red-500">
                       {error}
                     </td>
                   </tr>
