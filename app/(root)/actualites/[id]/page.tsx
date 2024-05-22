@@ -22,9 +22,13 @@ const ActualiteDetail = () => {
         }
         const data = await res.json();
         setArticle(data);
-        console.log(article)
+        console.log(data);
       } catch (err) {
-        setError(err.message);
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
       } finally {
         setIsLoading(false);
       }
@@ -48,9 +52,9 @@ const ActualiteDetail = () => {
   return (
     <>
       <Head>
-        <title>{article.titre} - Mon Site</title>
+        <title>{article.title} - Mon Site</title>
         <meta name="description" content={article.entete} />
-        <meta name="keywords" content={`actualités, news, ${article.titre}`} />
+        <meta name="keywords" content={`actualités, news, ${article.title}`} />
       </Head>
       <ActualiteArticle article={article} />
     </>

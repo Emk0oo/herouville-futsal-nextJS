@@ -47,31 +47,40 @@ exports.getArticleById = (req, res) => {
 exports.updateArticle = (req, res) => {
     const { id } = req.params;
     const { date, title, title2, title3, entete, content, content2, author } = req.body;
-    const query = `
-        UPDATE articles 
-        SET date = ?, title = ?, title2 = ?, title3 = ?, entete = ?, content = ?, content2 = ?, author = ?
-        WHERE id = ?
-    `;
-    const params = [date, title, title2, title3, entete, content, content2, author, id];
 
-    if (req.file) {
-        const imageURL = `/uploads/${req.file.originalname}`;
-        query = `
+    // Fetch the current image URL from the database
+    const getCurrentImageURLQuery = 'SELECT imageURL FROM articles WHERE id = ?';
+    connection.query(getCurrentImageURLQuery, [id], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ message: 'Article not found' });
+        }
+
+        const currentImageURL = results[0].imageURL;
+
+        let imageURL = currentImageURL; // Default to current image URL
+        if (req.file) {
+            imageURL = `/${req.file.originalname}`; // Use new image URL if provided
+        }
+
+        const query = `
             UPDATE articles 
             SET date = ?, imageURL = ?, title = ?, title2 = ?, title3 = ?, entete = ?, content = ?, content2 = ?, author = ?
             WHERE id = ?
         `;
-        params.splice(1, 0, imageURL); // Ajoute imageURL après date
-    }
+        const params = [date, imageURL, title, title2, title3, entete, content, content2, author, id];
 
-    connection.query(query, params, (err, results) => {
-        if (err) {
-            return res.status(500).json({ error: err.message });
-        }
-        if (results.affectedRows === 0) {
-            return res.status(404).json({ message: 'Article not found' });
-        }
-        res.status(200).json({ id, date, title, title2, title3, entete, content, content2, author });
+        connection.query(query, params, (err, results) => {
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            if (results.affectedRows === 0) {
+                return res.status(404).json({ message: 'Article not found' });
+            }
+            res.status(200).json({ id, date, title, title2, title3, entete, content, content2, author, imageURL });
+        });
     });
 };
 

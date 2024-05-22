@@ -27,6 +27,20 @@ export default function Actualites() {
     fetchArticles();
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:4000/article/${id}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) {
+        throw new Error("Failed to delete article");
+      }
+      setArticles(articles.filter(article => article.id !== id));
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
     <>
       <div className="w-full">
@@ -47,13 +61,13 @@ export default function Actualites() {
               <tbody className="text-gray-600 text-sm font-light">
                 {isLoading ? (
                   <tr>
-                    <td  className="text-center py-3">
+                    <td colSpan="4" className="text-center py-3">
                       Loading...
                     </td>
                   </tr>
                 ) : error ? (
                   <tr>
-                    <td  className="text-center py-3 text-red-500">
+                    <td colSpan="4" className="text-center py-3 text-red-500">
                       {error}
                     </td>
                   </tr>
@@ -65,7 +79,12 @@ export default function Actualites() {
                       <td className="py-3 px-6 text-left">{new Date(article.date).toLocaleDateString('fr-FR')}</td>
                       <td className="py-3 px-6 text-left">
                         <Link href={`actualites/editer/${article.id}`} className="text-blue-500 hover:text-blue-700 mr-2">Editer</Link>
-                        <Link href={`actualites/supprimer/${article.id}`} className="text-red-500 hover:text-red-700">Supprimer</Link>
+                        <button
+                          onClick={() => handleDelete(article.id)}
+                          className="text-red-500 hover:text-red-700"
+                        >
+                          Supprimer
+                        </button>
                       </td>
                     </tr>
                   ))
