@@ -8,15 +8,15 @@ interface ActualiteArticleProps {
 }
 
 const ActualiteArticle: React.FC<ActualiteArticleProps> = ({ article }) => {
-  const { imageUrl, titre, titre2, titre3, date, entete, content, content2 } = article;
-  console.log(imageUrl)
+  const { imageURL, title, title2, title3, date, entete, content, content2 } = article;
+  
   return (
     <div id="Article" className="w-full h-full p-4 md:mt-[3%]">
       <div id="headerArticle" className="flex flex-col md:flex-row md:w-2/3 shadow-xl mx-auto">
         <div className="w-full md:w-4/5 md:h-[400px] relative">
           <Image
-            src={imageUrl}
-            alt={titre}
+            src={imageURL}
+            alt={title}
             layout="fill"
             objectFit="contain"
             className=""
@@ -24,10 +24,10 @@ const ActualiteArticle: React.FC<ActualiteArticleProps> = ({ article }) => {
         </div>
         <div id="TitreArticle" className="flex flex-col justify-center md:w-1/5 md:ml-4 md:mt-0 mt-4">
           <h1 className="text-3xl font-bold text-bleuNuitHerouville">
-            {titre}
+            {title}
           </h1>
           <p className="text-xs md:text-sm text-gray-500 mt-1">
-            {date}
+           Publié le {new Date(date).toLocaleDateString('fr-FR')}
           </p>
         </div>
       </div>
@@ -37,10 +37,10 @@ const ActualiteArticle: React.FC<ActualiteArticleProps> = ({ article }) => {
           {entete}
         </p>
         <p className="mt-4 text-xl font-bold text-bleuNuitHerouville underline decoration-jauneHerouville decoration-4">
-          {titre2}
+          {title2}
         </p>
         <p className="mt-4 font-bold bg-bleuHerouville text-white inline-block">
-          {titre3}
+          {title3}
         </p>
         <div id="paragraphe" className="md:flex gap-10">
           <p className="mt-4">{content}</p>

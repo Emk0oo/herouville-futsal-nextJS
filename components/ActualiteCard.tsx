@@ -24,7 +24,7 @@ function ActualiteCard({ imageUrl, title, date, link }: ActualiteCardProps) {
       </div>
       <div className="p-4 h-52">
         <p className=" text-bleuNuitHerouville font-bold">{title}</p>
-        <p className="text-xs text-gray-500">{date}</p>
+        <p className="text-xs text-gray-500">Publié le {new Date(date).toLocaleDateString('fr-FR')}</p>
         <div className="mt-14">
           <ButtonLink text="Lire l'article" href={link} className="p-6" />
         </div>
