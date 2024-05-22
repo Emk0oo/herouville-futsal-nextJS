@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import React, { useState } from "react";
 import logo from "../public/logo.png";
-
 import logo2 from "../public/logo2.png";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -14,17 +13,22 @@ const montserrat = Montserrat({
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const toggleProfileMenu = () => {
+    setIsProfileOpen(!isProfileOpen);
+  };
+
   return (
-    <nav className={`${montserrat.variable} font-sans`}>
+    <nav className={`${montserrat.variable} font-sans w-full h-full`}>
       <div id="mobileNavbar" className="xl:hidden">
         <div
           id="headerNavbar"
-          className="flex flex-row w-full h-20 bg-bleuNuitHerouville justify-between z-50 fixed top-0 left-0 right-0 items-center shadow p-1"
+          className="flex flex-row w-full h-20 bg-bleuNuitHerouville justify-between z-10 fixed top-0 left-0 right-0 items-center shadow p-1"
         >
           <div className="ml-2 ">
             <a href="/" className="text-white hover:text-jauneHerouville">
@@ -129,8 +133,149 @@ function Navbar() {
           </ul>
         </div>
       </div>
-      <div id="navbarDesktop" className="invisible xl:visible">
-        <div className=" flex flex-row justify-between z-50 fixed top-0 left-0 right-0">
+      <div
+        id="navbarDesktop"
+        className="hidden xl:flex xl:flex-row xl:justify-between xl:z-10 xl:fixed xl:top-0 xl:left-0 xl:right-0 xl:w-full"
+      >
+        <div id="logoNavbar" className="w-1/2 flex items-center">
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="Logo du club de futsal de Herouville"
+              width={150}
+              height={150}
+            />
+          </Link>
+        </div>
+        <div
+          id="menuNavbar"
+          className="w-[47%] h-20 bg-bleuNuitHerouville flex items-center justify-end border-t-4 border-bleuHerouville rectangle text-white text-lg font-bold"
+        >
+          <ul className="flex flex-row h-full ">
+            <li className="px-11 py-7 border-r border-bleuBorder ">
+              <Link href="/equipe" className="hover:text-jauneHerouville">
+              Equipe
+              </Link>
+            </li>
+            <li className="px-11 py-7 border-r border-bleuBorder ">
+              <Link href="/actualites" className="hover:text-jauneHerouville">
+                Actualités
+              </Link>
+            </li>
+            <li className="px-11 py-7 border-r border-bleuBorder ">
+              <Link href="/calendrier" className="hover:text-jauneHerouville">
+                Calendrier
+              </Link>
+            </li>
+            <li className="px-11 py-7 ">
+              <Link href="/boutique" className="hover:text-jauneHerouville">
+                Boutique
+              </Link>
+            </li>
+            <li className="flex gap-2 bg-jauneHerouville items-center px-4 pl-7 rectangle2">
+              <Link href="https://www.facebook.com/herouvillefutsalforceethonneur/?locale=fr_FR">
+                <Image
+                  src="/facebook.png"
+                  alt="Logo de Facebook"
+                  width={18}
+                  height={30}
+                  className="object-cover"
+                />
+              </Link>
+
+              <Link href="https://twitter.com/futsalclubhsc">
+                <Image
+                  src="/twitter.png"
+                  alt="Logo de Twitter"
+                  width={30}
+                  height={30}
+                  className="object-cover"
+                />
+              </Link>
+              <Link href="https://www.instagram.com/herouvillefutsalhf/">
+                <Image
+                  src="/instagram.png"
+                  alt="Logo d'Instagram"
+                  width={30}
+                  height={30}
+                  className="object-cover"
+                />
+              </Link>
+              <button
+                onClick={toggleProfileMenu}
+                className="focus:outline-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="6" r="4" fill="currentColor" />
+                  <path
+                    fill="currentColor"
+                    d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5"
+                    opacity=".5"
+                  />
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+        {isProfileOpen && (
+          <div
+            id="dropdownMenuProfile"
+            className="absolute right-0 mt-[4%] w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="menu-button"
+          >
+            <div className="py-1" role="none">
+              <a
+                href="#"
+                className="text-gray-700 block px-4 py-2 text-sm"
+                role="menuitem"
+                id="menu-item-0"
+              >
+                Account settings
+              </a>
+              <a
+                href="#"
+                className="text-gray-700 block px-4 py-2 text-sm"
+                role="menuitem"
+                id="menu-item-1"
+              >
+                Support
+              </a>
+              <a
+                href="#"
+                className="text-gray-700 block px-4 py-2 text-sm"
+                role="menuitem"
+                id="menu-item-2"
+              >
+                License
+              </a>
+              <form method="POST" action="#" role="none">
+                <button
+                  type="submit"
+                  className="text-gray-700 block w-full px-4 py-2 text-left text-sm"
+                  role="menuitem"
+                  id="menu-item-3"
+                >
+                  Sign out
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;
+/*
+<div className="flex flex-row justify-between z-10 fixed top-0 left-0 right-0">
           <div className="ml-10">
             <a href="/" className="text-white hover:text-jauneHerouville">
               <Image
@@ -142,9 +287,9 @@ function Navbar() {
             </a>
           </div>
 
-          <div className="">
-            <ul className="flex bg-bleuNuitHerouville border-t-4 border-bleuHerouville text-2xl rectangle  ">
-              <li className="px-11 py-7 border-r border-bleuBorder ">
+          <div>
+            <ul className="flex bg-bleuNuitHerouville border-t-4 border-bleuHerouville text-2xl rectangle">
+              <li className="px-11 py-7 border-r border-bleuBorder">
                 <a
                   href="/equipe"
                   className="text-white hover:text-jauneHerouville"
@@ -168,7 +313,7 @@ function Navbar() {
                   Calendrier
                 </a>
               </li>
-              <li className="px-11 py-7 ">
+              <li className="px-11 py-7">
                 <a
                   href="/boutique"
                   className="text-white hover:text-jauneHerouville"
@@ -177,7 +322,7 @@ function Navbar() {
                 </a>
               </li>
 
-              <li className="px-11 py-7 bg-jauneHerouville rectangle2 flex flex-row gap-6">
+              <li className="px-11 py-7 bg-jauneHerouville rectangle2 flex flex-row gap-6 relative">
                 <a href="https://www.facebook.com/herouvillefutsalforceethonneur/?locale=fr_FR">
                   <Image
                     src="/facebook.png"
@@ -206,7 +351,70 @@ function Navbar() {
                     className="object-cover"
                   />
                 </a>
-                <Link href="/login">
+                <div id="profileLogo" className="relative">
+                  <button onClick={toggleProfileMenu} className="focus:outline-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle cx="12" cy="6" r="4" fill="currentColor" />
+                      <path
+                        fill="currentColor"
+                        d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5"
+                        opacity=".5"
+                      />
+                    </svg>
+                  </button>
+                  {isProfileOpen && (
+                    <div
+                      id="dropdownMenuProfile"
+                      className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="menu-button"
+                    >
+                      <div className="py-1" role="none">
+                        <a
+                          href="#"
+                          className="text-gray-700 block px-4 py-2 text-sm"
+                          role="menuitem"
+                          id="menu-item-0"
+                        >
+                          Account settings
+                        </a>
+                        <a
+                          href="#"
+                          className="text-gray-700 block px-4 py-2 text-sm"
+                          role="menuitem"
+                          id="menu-item-1"
+                        >
+                          Support
+                        </a>
+                        <a
+                          href="#"
+                          className="text-gray-700 block px-4 py-2 text-sm"
+                          role="menuitem"
+                          id="menu-item-2"
+                        >
+                          License
+                        </a>
+                        <form method="POST" action="#" role="none">
+                          <button
+                            type="submit"
+                            className="text-gray-700 block w-full px-4 py-2 text-left text-sm"
+                            role="menuitem"
+                            id="menu-item-3"
+                          >
+                            Sign out
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                {/* <Link href="/login">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
@@ -220,14 +428,9 @@ function Navbar() {
                       opacity=".5"
                     />
                   </svg>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
-}
-
-export default Navbar;
+                </Link> 
+                </li>
+                </ul>
+              </div>
+            </div>
+            */

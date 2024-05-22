@@ -37,7 +37,7 @@ export default function Home() {
         />
       </Head>
       <div className={`${montserrat.variable} font-sans w-full `}>
-        <div className="bg-photo1 w-full h-screen flex justify-center items-center  bg-no-repeat">
+        <div id="homeHeader" className="bg-photo1 w-full h-screen flex justify-center items-center  bg-no-repeat z-0">
           <div>
             <Image
               src={centerLogo1}
@@ -64,10 +64,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div id="Actu" className="w-full h-screen flex justify-center">
+        <div id="homeNews" className="w-full h-screen flex justify-center">
           <div
-            id="actuContent"
-            className="bg-actu bg-no-repeat w-[90%] md:w-[75%] h-2/3 rounded-2xl mt-[-5%] z-0"
+            id="newsContent"
+            className="bg-actu bg-no-repeat w-[90%] md:w-[75%] h-screen md:h-2/3 rounded-2xl mt-[-5%] z-0"
           >
             <div className="mt-[3%]">
               <div className="flex flex-col justify-center items-center">
@@ -104,12 +104,13 @@ export default function Home() {
                   title="Lorem ipsum dolor sit amet consectetur"
                   date="12 avril 2024"
                   href="/actualites"
-                />
+                /> 
               </div>
             </div>
             <div id="boutonActualites" className="flex justify-center mt-[5%]">
               <ButtonNavigation text="Voir les actualités" href="/actualites" />
             </div>
+           
           </div>
         </div>
 

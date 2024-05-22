@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <link rel="icon" href="/favicon.ico" />
-      <body>
+      <body className="w-full h-full">
           <Navbar />
           {isHomepage ? (
             children
