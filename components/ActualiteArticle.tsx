@@ -17,18 +17,20 @@ const ActualiteArticle: React.FC<ActualiteArticleProps> = ({ article }) => {
         id="headerArticle"
         className="flex flex-col md:flex-row md:w-2/3 shadow-xl mx-auto divide-y-4 md:divide-x-4 md:divide-y-0 divide-jauneHerouville"
       >
-        <div className="w-full md:w-4/5 md:h-[400px] relative">
+        <div className="w-full md:w-2/3 relative">
           <Image
             src={imageURL}
             alt={title}
-            layout="fill"
+            layout="responsive"
+            width={700} // Set the width and height according to your image aspect ratio
+            height={400}
             objectFit="contain"
             className=""
           />
         </div>
         <div
           id="TitreArticle"
-          className="flex flex-col justify-center md:w-1/5 md:ml-4 md:mt-0 mt-4"
+          className="flex flex-col justify-center md:w-1/3 md:mt-0 p-4"
         >
           <h1 className="text-3xl font-bold text-bleuNuitHerouville">
             {title}
