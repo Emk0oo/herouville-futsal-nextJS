@@ -24,9 +24,9 @@ const Dashboard = ({ children }: DashboardProps) => {
   };
 
   return (
-    <main id="dashboard" className="relative w-full h-screen bg-slate-400">
+    <main id="dashboard" className="relative w-full h-screen shadow bg-slate-400">
       {/* Header */}
-      <div id="header" className="absolute w-full h-[10%] bg-white z-10">
+      <div id="header" className="absolute w-full h-[10%] bg-white z-10 ">
         <div
           id="headerContent"
           className={`flex flex-row transition-all duration-300 ${
@@ -41,7 +41,7 @@ const Dashboard = ({ children }: DashboardProps) => {
 
       <aside
         id="sidebar"
-        className={`absolute top-0 left-0 transition-all duration-300 h-full overflow-hidden bg-white z-20 ${
+        className={`absolute top-0 left-0 transition-all duration-300 h-full shadow overflow-hidden bg-white z-20 ${
           isSidebarOpen ? "w-1/6" : "w-[5%] "
         }`}
       >
@@ -86,7 +86,7 @@ const Dashboard = ({ children }: DashboardProps) => {
 
       <div
         id="contentDashboard"
-        className={`absolute top-[10%] transition-all duration-300 bg-white  ${
+        className={`absolute top-[10%] transition-all duration-300 bg-slate-200  ${
           isSidebarOpen ? "left-[16.5%] w-[83%]" : "left-[5%] w-[95%]"
         } h-[90%] bg-slate-100 p-4`}
       >

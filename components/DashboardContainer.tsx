@@ -14,7 +14,7 @@ const DashboardContainer = ({ children }: DashboardContainerProps) => {
   const nomPage = dashboardMenu.find((page) => page.link === pathname)?.title;
   return (
     <>
-      <div className="w-full h-full flex flex-col  bg-slate-200 rounded-lg   ">
+      <div className="w-full h-full flex flex-col  bg-white rounded-lg   ">
         <div
           id="dashboardContainerHeader"
           className="flex w-full h-10 items-center border-b-2 "
