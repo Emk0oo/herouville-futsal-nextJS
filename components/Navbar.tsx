@@ -137,7 +137,7 @@ function Navbar() {
         id="navbarDesktop"
         className="hidden xl:flex xl:flex-row xl:justify-between xl:z-10 xl:fixed xl:top-0 xl:left-0 xl:right-0 xl:w-full"
       >
-        <div id="logoNavbar" className="w-1/2 flex items-center">
+        <div id="logoNavbar" className="w-1/2 flex items-center ml-[6.5%]">
           <Link href="/">
             <Image
               src={logo}
@@ -149,30 +149,30 @@ function Navbar() {
         </div>
         <div
           id="menuNavbar"
-          className="w-[47%] h-20 bg-bleuNuitHerouville flex items-center justify-end border-t-4 border-bleuHerouville rectangle text-white text-lg font-bold"
+          className="w-[47%] h-20 bg-bleuNuitHerouville flex items-center justify-end border-t-8 border-bleuHerouville rectangle text-white text-lg font-bold"
         >
-          <ul className="flex flex-row h-full ">
-            <li className="px-11 py-7 border-r border-bleuBorder ">
+          <ul className="flex flex-row h-full items-center  mx-auto overflow-hidden">
+            <li className="flex px-11  border-r border-bleuBorder ">
               <Link href="/equipe" className="hover:text-jauneHerouville">
               Equipe
               </Link>
             </li>
-            <li className="px-11 py-7 border-r border-bleuBorder ">
+            <li className="flex px-11  border-r border-bleuBorder ">
               <Link href="/actualites" className="hover:text-jauneHerouville">
                 Actualités
               </Link>
             </li>
-            <li className="px-11 py-7 border-r border-bleuBorder ">
+            <li className="flex px-11  border-r border-bleuBorder ">
               <Link href="/calendrier" className="hover:text-jauneHerouville">
                 Calendrier
               </Link>
             </li>
-            <li className="px-11 py-7 ">
+            <li className="flex px-11  ">
               <Link href="/boutique" className="hover:text-jauneHerouville">
                 Boutique
               </Link>
             </li>
-            <li className="flex gap-2 bg-jauneHerouville items-center px-4 pl-7 rectangle2">
+            <li className="flex gap-2 h-full w-full bg-jauneHerouville items-center px-4 pl-7 rectangle2">
               <Link href="https://www.facebook.com/herouvillefutsalforceethonneur/?locale=fr_FR">
                 <Image
                   src="/facebook.png"
@@ -274,163 +274,3 @@ function Navbar() {
 }
 
 export default Navbar;
-/*
-<div className="flex flex-row justify-between z-10 fixed top-0 left-0 right-0">
-          <div className="ml-10">
-            <a href="/" className="text-white hover:text-jauneHerouville">
-              <Image
-                src={logo}
-                alt="Logo du club de futsal de Herouville"
-                width={150}
-                height={150}
-              />
-            </a>
-          </div>
-
-          <div>
-            <ul className="flex bg-bleuNuitHerouville border-t-4 border-bleuHerouville text-2xl rectangle">
-              <li className="px-11 py-7 border-r border-bleuBorder">
-                <a
-                  href="/equipe"
-                  className="text-white hover:text-jauneHerouville"
-                >
-                  Equipe
-                </a>
-              </li>
-              <li className="px-11 py-7 border-r border-bleuBorder">
-                <a
-                  href="/actualites"
-                  className="text-white hover:text-jauneHerouville"
-                >
-                  Actualités
-                </a>
-              </li>
-              <li className="px-11 py-7 border-r border-bleuBorder">
-                <a
-                  href="/calendrier"
-                  className="text-white hover:text-jauneHerouville"
-                >
-                  Calendrier
-                </a>
-              </li>
-              <li className="px-11 py-7">
-                <a
-                  href="/boutique"
-                  className="text-white hover:text-jauneHerouville"
-                >
-                  Boutique
-                </a>
-              </li>
-
-              <li className="px-11 py-7 bg-jauneHerouville rectangle2 flex flex-row gap-6 relative">
-                <a href="https://www.facebook.com/herouvillefutsalforceethonneur/?locale=fr_FR">
-                  <Image
-                    src="/facebook.png"
-                    alt="Logo de Facebook"
-                    width={18}
-                    height={30}
-                    className="object-cover"
-                  />
-                </a>
-
-                <a href="https://twitter.com/futsalclubhsc">
-                  <Image
-                    src="/twitter.png"
-                    alt="Logo de Twitter"
-                    width={30}
-                    height={30}
-                    className="object-cover"
-                  />
-                </a>
-                <a href="https://www.instagram.com/herouvillefutsalhf/">
-                  <Image
-                    src="/instagram.png"
-                    alt="Logo d'Instagram"
-                    width={30}
-                    height={30}
-                    className="object-cover"
-                  />
-                </a>
-                <div id="profileLogo" className="relative">
-                  <button onClick={toggleProfileMenu} className="focus:outline-none">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle cx="12" cy="6" r="4" fill="currentColor" />
-                      <path
-                        fill="currentColor"
-                        d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5"
-                        opacity=".5"
-                      />
-                    </svg>
-                  </button>
-                  {isProfileOpen && (
-                    <div
-                      id="dropdownMenuProfile"
-                      className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
-                      role="menu"
-                      aria-orientation="vertical"
-                      aria-labelledby="menu-button"
-                    >
-                      <div className="py-1" role="none">
-                        <a
-                          href="#"
-                          className="text-gray-700 block px-4 py-2 text-sm"
-                          role="menuitem"
-                          id="menu-item-0"
-                        >
-                          Account settings
-                        </a>
-                        <a
-                          href="#"
-                          className="text-gray-700 block px-4 py-2 text-sm"
-                          role="menuitem"
-                          id="menu-item-1"
-                        >
-                          Support
-                        </a>
-                        <a
-                          href="#"
-                          className="text-gray-700 block px-4 py-2 text-sm"
-                          role="menuitem"
-                          id="menu-item-2"
-                        >
-                          License
-                        </a>
-                        <form method="POST" action="#" role="none">
-                          <button
-                            type="submit"
-                            className="text-gray-700 block w-full px-4 py-2 text-left text-sm"
-                            role="menuitem"
-                            id="menu-item-3"
-                          >
-                            Sign out
-                          </button>
-                        </form>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                {/* <Link href="/login">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle cx="12" cy="6" r="4" fill="currentColor" />
-                    <path
-                      fill="currentColor"
-                      d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5"
-                      opacity=".5"
-                    />
-                  </svg>
-                </Link> 
-                </li>
-                </ul>
-              </div>
-            </div>
-            */
