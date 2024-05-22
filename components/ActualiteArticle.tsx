@@ -8,14 +8,14 @@ interface ActualiteArticleProps {
 }
 
 const ActualiteArticle: React.FC<ActualiteArticleProps> = ({ article }) => {
-  const { imageUrl, title, title2, title3, date, entete, content, content2 } = article;
+  const { imageURL, title, title2, title3, date, entete, content, content2 } = article
   
   return (
     <div id="Article" className="w-full h-full p-4 md:mt-[3%]">
       <div id="headerArticle" className="flex flex-col md:flex-row md:w-2/3 shadow-xl mx-auto">
         <div className="w-full md:w-4/5 md:h-[400px] relative">
           <Image
-            src={imageUrl}
+            src={imageURL}
             alt={title}
             layout="fill"
             objectFit="contain"

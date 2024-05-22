@@ -1,7 +1,7 @@
 // types.ts
 export interface Article {
     id: number;
-    imageUrl: string;
+    imageURL: string;
     title: string;
     title2: string;
     title3: string;
