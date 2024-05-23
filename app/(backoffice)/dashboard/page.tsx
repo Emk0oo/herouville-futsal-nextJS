@@ -1,18 +1,16 @@
-"use client";
-import useAuthCheckDashboard from "@/hooks/useAuthCheckDashboard";
+import React from 'react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Herouville Futsal - Dashboard',
+  description: 'Dashboard de l\'administration du site.',
+};
 
 
 export default function DashboardPage() {
-  const user = useAuthCheckDashboard();
-
-  if (!user) {
-    return <div>Loading...</div>; // ou tout autre message de chargement ou redirection si nécessaire
-  }
-
   return (
     <>
-      <h1>Welcome, User {user.id}</h1>
-      <p>Your role is: {user.role}</p>
+
     </>
   );
 }
