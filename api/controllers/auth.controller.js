@@ -7,13 +7,27 @@ dotenv.config();
 
 exports.register = (req, res) => {
   const { email, password, nom, prenom } = req.body;
-  console.log(email, password, nom, prenom)
-  const hashedPassword = bcrypt.hashSync(password, 10);
-  const query = 'INSERT INTO utilisateurs (email, password, nom, prenom, role_id) VALUES (?, ?, ?, ?, 2)';
+  console.log(email, password, nom, prenom);
 
-  connection.query(query, [email, hashedPassword, nom, prenom], (err, results) => {
+  // Query to check if the user already exists
+  const checkUserQuery = 'SELECT * FROM utilisateurs WHERE email = ?';
+
+  connection.query(checkUserQuery, [email], (err, results) => {
     if (err) return res.status(500).json({ error: 'Database error' });
-    res.status(201).json({ message: 'User registered successfully' });
+
+    if (results.length > 0) {
+      return res.status(409).json({ error: 'User already exists' });
+    }
+
+    // If user does not exist, proceed with registration
+    const hashedPassword = bcrypt.hashSync(password, 10);
+    const registerUserQuery = 'INSERT INTO utilisateurs (email, password, nom, prenom, role_id) VALUES (?, ?, ?, ?, 2)';
+
+    connection.query(registerUserQuery, [email, hashedPassword, nom, prenom], (err, results) => {
+      if (err) return res.status(500).json({ error: 'Database error' });
+
+      res.status(201).json({ message: 'User registered successfully' });
+    });
   });
 };
 
