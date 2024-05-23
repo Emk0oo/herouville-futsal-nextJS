@@ -1,14 +1,17 @@
-// dashboard/page.tsx
 "use client";
-import useAuthCheck from "@/hooks/useAuthCheck";
+import useAuthCheckDashboard from "@/hooks/useAuthCheckDashboard";
+
 export default function DashboardPage() {
-  useAuthCheck();
+  const user = useAuthCheckDashboard();
+
+  if (!user) {
+    return <div>Loading...</div>; // ou tout autre message de chargement ou redirection si nécessaire
+  }
 
   return (
     <>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem veritatis
-      quos dolorum nobis praesentium fuga natus repudiandae autem, vero tempore
-      iste veniam in ea eius dolore accusantium nam reprehenderit sapiente.
+      <h1>Welcome, User {user.id}</h1>
+      <p>Your role is: {user.role}</p>
     </>
   );
 }
