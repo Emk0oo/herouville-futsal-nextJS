@@ -208,40 +208,23 @@ function Navbar() {
             aria-labelledby="menu-button"
           >
             <div className="py-1" role="none">
-              <a
-                href="#"
+              <Link
+                href="/login"
                 className="text-gray-700 block px-4 py-2 text-sm"
                 role="menuitem"
                 id="menu-item-0"
               >
-                Account settings
-              </a>
+                Se connecter
+              </Link>
               <a
                 href="#"
                 className="text-gray-700 block px-4 py-2 text-sm"
                 role="menuitem"
                 id="menu-item-1"
               >
-                Support
+                S&apos;inscrire
               </a>
-              <a
-                href="#"
-                className="text-gray-700 block px-4 py-2 text-sm"
-                role="menuitem"
-                id="menu-item-2"
-              >
-                License
-              </a>
-              <form method="POST" action="#" role="none">
-                <button
-                  type="submit"
-                  className="text-gray-700 block w-full px-4 py-2 text-left text-sm"
-                  role="menuitem"
-                  id="menu-item-3"
-                >
-                  Sign out
-                </button>
-              </form>
+              
             </div>
           </div>
         )}

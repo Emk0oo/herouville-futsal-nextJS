@@ -24,6 +24,8 @@ app.listen(port, () => {
 
 app.use('/article', require('./routes/article.route.js'));
 
+app.use('/auth', require('./routes/auth.route.js'));
+
 // app.use('/user', require('./routes/user.route.js'));
 
 // app.use('/player', require('./routes/player.route.js'));

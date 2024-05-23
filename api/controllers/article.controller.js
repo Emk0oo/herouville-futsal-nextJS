@@ -6,7 +6,7 @@ exports.createArticle = (req, res) => {
     const { date, title, title2, title3, entete, content, content2, author } = req.body;
     const imageURL = req.file ? `/${req.file.originalname}` : null; // Chemin de l'image téléchargée
     const query = `
-        INSERT INTO articles (date, imageURL, title, title2, title3, entete, content, content2, author) 
+        INSERT INTO actualites (date, imageURL, title, title2, title3, entete, content, content2, author) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     connection.query(query, [date, imageURL, title, title2, title3, entete, content, content2, author], (err, results) => {
@@ -19,7 +19,7 @@ exports.createArticle = (req, res) => {
 
 // Get all articles
 exports.getArticles = (req, res) => {
-    const query = 'SELECT * FROM articles';
+    const query = 'SELECT * FROM actualites';
     connection.query(query, (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
@@ -31,7 +31,7 @@ exports.getArticles = (req, res) => {
 // Get a single article by ID
 exports.getArticleById = (req, res) => {
     const { id } = req.params;
-    const query = 'SELECT * FROM articles WHERE id = ?';
+    const query = 'SELECT * FROM actualites WHERE id = ?';
     connection.query(query, [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
@@ -49,7 +49,7 @@ exports.updateArticle = (req, res) => {
     const { date, title, title2, title3, entete, content, content2, author } = req.body;
 
     // Fetch the current image URL from the database
-    const getCurrentImageURLQuery = 'SELECT imageURL FROM articles WHERE id = ?';
+    const getCurrentImageURLQuery = 'SELECT imageURL FROM actualites WHERE id = ?';
     connection.query(getCurrentImageURLQuery, [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
@@ -66,7 +66,7 @@ exports.updateArticle = (req, res) => {
         }
 
         const query = `
-            UPDATE articles 
+            UPDATE actualites 
             SET date = ?, imageURL = ?, title = ?, title2 = ?, title3 = ?, entete = ?, content = ?, content2 = ?, author = ?
             WHERE id = ?
         `;
@@ -87,7 +87,7 @@ exports.updateArticle = (req, res) => {
 // Delete an article by ID
 exports.deleteArticle = (req, res) => {
     const { id } = req.params;
-    const query = 'DELETE FROM articles WHERE id = ?';
+    const query = 'DELETE FROM actualites WHERE id = ?';
     connection.query(query, [id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });

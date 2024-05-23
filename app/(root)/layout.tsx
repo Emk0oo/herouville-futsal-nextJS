@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
 import GenericPage from "@/components/GenericPage";
-import MetadataWrapper from "@/components/MetadataWrapper"; // Importez votre composant MetadataWrapper
+
 
 export default function RootLayout({
   children,
