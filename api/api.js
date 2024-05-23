@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = 4000
 const cors = require('cors');
+const checkToken = require('./middleware/checkToken.js');
 
 app.use(express.json());
 
@@ -22,7 +23,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-app.use('/article', require('./routes/article.route.js'));
+app.use('/article', checkToken, require('./routes/article.route.js'));
 
 app.use('/auth', require('./routes/auth.route.js'));
 
