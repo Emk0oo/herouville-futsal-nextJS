@@ -23,7 +23,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-app.use('/article', checkToken, require('./routes/article.route.js'));
+app.use('/article', require('./routes/article.route.js'));
 
 app.use('/auth', require('./routes/auth.route.js'));
 

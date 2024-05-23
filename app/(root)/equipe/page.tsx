@@ -1,6 +1,7 @@
 import GenericPage from "@/components/GenericPage";
 import PlayerCard from "@/components/PlayerCard";
 import React from "react";
+import { Metadata } from "next";
 
 const playerAPI = [
   { role: "Gardien", name: "Leo", surname: "Messi", number: 9 },
@@ -16,6 +17,11 @@ const playerAPI = [
   { role: "Milieu", name: "Kylian", surname: "Mbappé", number: 10 },
   { role: "Attaquant", name: "Neymar", surname: "Jr", number: 11 },
 ];
+
+export const metadata: Metadata = {
+  title: "Herouville Futsal - Equipe",
+  description: "Découvrez les joueurs de notre équipe.",
+};
 
 const Equipe = () => {
   return (

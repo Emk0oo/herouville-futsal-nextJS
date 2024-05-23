@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const articleController = require('../controllers/article.controller');
+const checkToken  = require('../middleware/checkToken');
 
 // Configuration de Multer pour stocker les images dans le dossier public
 const storage = multer.diskStorage({
@@ -17,7 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Create a new article
-router.post('/', upload.single('image'), articleController.createArticle);
+router.post('/', checkToken, upload.single('image'), articleController.createArticle);
 
 // Get all articles
 router.get('/', articleController.getArticles);
@@ -26,9 +27,9 @@ router.get('/', articleController.getArticles);
 router.get('/:id', articleController.getArticleById);
 
 // Update an article by ID
-router.put('/:id', upload.single('image'), articleController.updateArticle);
+router.put('/:id', checkToken, upload.single('image'), articleController.updateArticle);
 
 // Delete an article by ID
-router.delete('/:id', articleController.deleteArticle);
+router.delete('/:id', checkToken, articleController.deleteArticle);
 
 module.exports = router;
