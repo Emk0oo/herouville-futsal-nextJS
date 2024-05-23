@@ -1,13 +1,14 @@
 // Actualites.js
-import Card from "@/components/ActualiteCard";
 import ActualiteForm from "@/components/ActualiteForm";
-import GenericPage from "@/components/GenericPage";
-import Link from "next/link";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Herouville Futsal - Dashboard - Actualites - Nouveau",
+  description: "Dashboard de l'administration du site.",
+};
 
 export default function NouveauArticle() {
-  const pageTitle = "Actualités";
-
   return (
     <div>
         <ActualiteForm />
