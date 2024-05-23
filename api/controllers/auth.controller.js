@@ -1,6 +1,9 @@
 const connection = require('../config/database');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 exports.register = (req, res) => {
   const { email, password, nom, prenom } = req.body;
@@ -26,7 +29,7 @@ exports.login = (req, res) => {
     const validPassword = await bcrypt.compare(password, user.password);
     if (!validPassword) return res.status(401).json({ error: 'Invalid credentials' });
 
-    const token = jwt.sign({ id: user.id, role: user.role_id }, 'your_jwt_secret', { expiresIn: '24h' });
+    const token = jwt.sign({ id: user.id, role: user.role_id }, process.env.JWT_SECRET , { expiresIn: '24h' });
     res.json({ token });
   });
 };
