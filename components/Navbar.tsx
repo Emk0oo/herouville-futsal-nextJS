@@ -5,11 +5,8 @@ import logo from "../public/logo.png";
 import logo2 from "../public/logo2.png";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { BsCart2 } from "react-icons/bs";
 import { FaFacebookF, FaInstagram, FaRegUser } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { CiUser } from "react-icons/ci";
-import { LuUser } from "react-icons/lu";
 import { IoBagOutline } from "react-icons/io5";
 
 const montserrat = Montserrat({

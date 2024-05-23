@@ -78,6 +78,7 @@ const Dashboard = ({ children }: DashboardProps) => {
                 isActive={
                   pathname === item.link 
                 }
+                icon={item.icon}
               />
             ))}
           </div>

@@ -1,29 +1,34 @@
-import CalendarSVG from "../public/calendar.svg";
+import { CiShop } from "react-icons/ci";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { IoMdFootball } from "react-icons/io";
+import { IoNewspaperOutline } from "react-icons/io5";
+import { RxDashboard } from "react-icons/rx";
 
 export const dashboardMenu = [
   {
     title: "Dashboard",
     link: "/dashboard",
-    // icon: CalendarSVG,
+    icon: <RxDashboard size={30} />,
   },
   {
     title: "Calendrier",
     link: "/dashboard/calendrier",
-    // icon: CalendarSVG,
+    icon: <FaRegCalendarAlt size={30} />,
   },
   {
     title: "Boutique",
     link: "/dashboard/boutique",
-    // icon: CalendarSVG,
+    icon: <CiShop size={30} />,
   },
   {
     title: "Actualités",
     link: "/dashboard/actualites",
-    // icon: CalendarSVG,
+    icon: <IoNewspaperOutline size={30} />,
   },
   {
     title: "Equipe",
     link: "/dashboard/equipe",
-    // icon: CalendarSVG,
+    icon: <IoMdFootball size={30} />
+,
   },
 ];
