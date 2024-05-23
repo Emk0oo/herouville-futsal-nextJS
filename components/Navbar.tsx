@@ -65,8 +65,8 @@ function Navbar() {
         <div
           id="menuDropdown"
           className={`${
-            isOpen ? "block" : "hidden"
-          } bg-bleuNuitHerouville fixed top-20 left-0 right-0 z-40 shadow-lg`}
+            isOpen ? "max-h-screen" : "max-h-0"
+          } transition-max-height duration-500 overflow-hidden bg-bleuNuitHerouville fixed top-20 left-0 right-0 z-40 shadow-lg`}
         >
           <ul className="flex flex-col text-white text-lg">
             <li className="px-11 py-7 border-b border-bleuBorder">
