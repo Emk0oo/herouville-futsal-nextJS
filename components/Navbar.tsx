@@ -5,6 +5,12 @@ import logo from "../public/logo.png";
 import logo2 from "../public/logo2.png";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { BsCart2 } from "react-icons/bs";
+import { FaFacebookF, FaInstagram, FaRegUser } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { CiUser } from "react-icons/ci";
+import { LuUser } from "react-icons/lu";
+import { IoBagOutline } from "react-icons/io5";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -154,7 +160,7 @@ function Navbar() {
           <ul className="flex flex-row h-full items-center  mx-auto overflow-hidden">
             <li className="flex px-11  border-r border-bleuBorder ">
               <Link href="/equipe" className="hover:text-jauneHerouville">
-              Equipe
+                Equipe
               </Link>
             </li>
             <li className="flex px-11  border-r border-bleuBorder ">
@@ -174,50 +180,24 @@ function Navbar() {
             </li>
             <li className="flex gap-2 h-full w-full bg-jauneHerouville items-center px-4 pl-7 rectangle2">
               <Link href="https://www.facebook.com/herouvillefutsalforceethonneur/?locale=fr_FR">
-                <Image
-                  src="/facebook.png"
-                  alt="Logo de Facebook"
-                  width={18}
-                  height={30}
-                  className="object-cover"
-                />
+                <FaFacebookF size={25} />
               </Link>
 
               <Link href="https://twitter.com/futsalclubhsc">
-                <Image
-                  src="/twitter.png"
-                  alt="Logo de Twitter"
-                  width={30}
-                  height={30}
-                  className="object-cover"
-                />
+                <FaXTwitter size={25} />
               </Link>
               <Link href="https://www.instagram.com/herouvillefutsalhf/">
-                <Image
-                  src="/instagram.png"
-                  alt="Logo d'Instagram"
-                  width={30}
-                  height={30}
-                  className="object-cover"
-                />
+                <FaInstagram size={25} />
               </Link>
               <button
                 onClick={toggleProfileMenu}
                 className="focus:outline-none"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="6" r="4" fill="currentColor" />
-                  <path
-                    fill="currentColor"
-                    d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5"
-                    opacity=".5"
-                  />
-                </svg>
+                <FaRegUser size={25} />
+              </button>
+              <button className="focus:outline-none">
+              <IoBagOutline size={25} />
+
               </button>
             </li>
           </ul>
