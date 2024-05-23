@@ -1,6 +1,7 @@
 "use client";
 import useAuthCheckDashboard from "@/hooks/useAuthCheckDashboard";
 
+
 export default function DashboardPage() {
   const user = useAuthCheckDashboard();
 
