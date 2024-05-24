@@ -5,9 +5,16 @@ import logo from "../public/logo.png";
 import logo2 from "../public/logo2.png";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FaFacebookF, FaInstagram, FaRegUser } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaRegCalendarAlt,
+  FaRegUser,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { IoBagOutline } from "react-icons/io5";
+import { IoBagOutline, IoNewspaperOutline } from "react-icons/io5";
+import { IoMdFootball } from "react-icons/io";
+import { CiShop } from "react-icons/ci";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,7 +38,6 @@ function Navbar() {
       setIsProfileOpen(false);
     }
   }, [isOpen]);
-
 
   return (
     <nav className="w-full h-full">
@@ -75,23 +81,27 @@ function Navbar() {
             isOpen ? "max-h-screen" : "max-h-0"
           } transition-max-height duration-500 overflow-hidden bg-bleuNuitHerouville fixed top-20 left-0 right-0 z-40 shadow-lg`}
         >
-          <ul className="flex flex-col text-white text-lg">
-            <li className="px-11 py-7 border-b border-bleuBorder">
+          <ul className="flex flex-col text-white text-lg divide-y divide-bleuBorder ">
+            <li className="px-10 py-7 flex items-center gap-1">
+              <IoMdFootball size={30} />
               <Link href="/equipe" className="hover:text-jauneHerouville">
                 Equipe
               </Link>
             </li>
-            <li className="px-11 py-7 border-b border-bleuBorder">
+            <li className="px-10 py-7 flex items-center gap-1">
+              <IoNewspaperOutline size={30} />
               <Link href="/actualites" className="hover:text-jauneHerouville">
                 Actualités
               </Link>
             </li>
-            <li className="px-11 py-7 border-b border-bleuBorder">
+            <li className="px-10 py-7 flex items-center gap-1">
+              <FaRegCalendarAlt size={30} />
               <Link href="/calendrier" className="hover:text-jauneHerouville">
                 Calendrier
               </Link>
             </li>
-            <li className="px-11 py-7 border-b border-bleuBorder">
+            <li className="px-10 py-7 flex items-center gap-1">
+              <CiShop size={30} />
               <Link href="/boutique" className="hover:text-jauneHerouville">
                 Boutique
               </Link>
@@ -140,14 +150,14 @@ function Navbar() {
           id="mobileProfileDropdown"
           className={`${
             isProfileOpen ? "max-h-screen" : "max-h-0"
-          } transition-max-height duration-500 overflow-hidden bg-bleuHerouville fixed top-20 left-0 right-0 z-40 shadow-lg `}
+          } transition-max-height duration-500 overflow-hidden bg-bleuHerouville fixed top-20 mt-2 left-0 right-0 z-40 shadow-lg `}
         >
           <div
             id="contentMobileProfileDropdown"
-            className="w-full text-end flex flex-col"
+            className="w-full  flex flex-col"
           >
-            <ul className="flex flex-col text-white text-lg divide-y divide-white">
-              <li className="px-11 py-7 border-b border-bleuBorder">
+            <ul className="flex flex-col text-white text-lg divide-y divide-white ">
+              <li className="px-11 py-7 flex items-center gap-1">
                 <button
                   className="hover:text-jauneHerouville"
                   onClick={toggleProfileMenu}
@@ -155,17 +165,17 @@ function Navbar() {
                   Fermer
                 </button>
               </li>
-              <li className="px-11 py-7 border-b border-bleuBorder">
+              <li className="px-11 py-7 flex items-center gap-1">
                 <Link href="/actualites" className="hover:text-jauneHerouville">
                   Commandes
                 </Link>
               </li>
-              <li className="px-11 py-7 border-b border-bleuBorder">
+              <li className="px-11 py-7 flex items-center gap-1">
                 <Link href="/calendrier" className="hover:text-jauneHerouville">
                   Réglages
                 </Link>
               </li>
-              <li className="px-11 py-7 border-b border-bleuBorder">
+              <li className="px-11 py-7 flex items-center gap-1">
                 <Link href="/boutique" className="hover:text-jauneHerouville">
                   Déconnexion
                 </Link>
