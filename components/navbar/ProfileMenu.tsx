@@ -1,6 +1,9 @@
 import useAuthMenuProfileCheck from "@/hooks/useAuthMenuProfileCheck";
 import Link from "next/link";
+import { CiLogin } from "react-icons/ci";
 import { FaListUl } from "react-icons/fa";
+import { FaPencil } from "react-icons/fa6";
+import { IoClose } from "react-icons/io5";
 import { LuSettings } from "react-icons/lu";
 import { SlLogout } from "react-icons/sl";
 
@@ -24,6 +27,8 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
       <div id="contentMobileProfileDropdown" className="w-full flex flex-col">
         <ul className="flex flex-col text-white text-lg divide-y divide-white">
           <li className="px-11 py-7 flex items-center gap-1">
+          <IoClose size={20} />
+
             <button
               className="hover:text-jauneHerouville"
               onClick={toggleProfileMenu}
@@ -61,19 +66,19 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
           ) : (
             <>
               <li className="px-11 py-7 flex items-center gap-1">
-                <FaListUl size={20} />
+                <CiLogin size={20} />
                 <Link href="/login" className="hover:text-jauneHerouville">
                   Se connecter
                 </Link>
               </li>
               <li className="px-11 py-7 flex items-center gap-1">
-                <LuSettings size={20} />
+                <FaPencil size={20} />
                 <Link href="/register" className="hover:text-jauneHerouville">
                   S&apos;inscrire
                 </Link>
               </li>
               <li className="px-11 py-7 flex items-center gap-1">
-                <></>
+                <wbr></wbr> 
               </li>
             </>
           )}
