@@ -28,7 +28,7 @@ const Equipe = () => {
     <>
       <div
         id="equipeContent"
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 px-2 mt-5"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 px-2 mt-2 "
       >
         {playerAPI.map((player, index) => (
           <PlayerCard

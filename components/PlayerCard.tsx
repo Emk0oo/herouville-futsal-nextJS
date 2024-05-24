@@ -11,7 +11,7 @@ function PlayerCard({ role, name, surname, number }: PlayerCardProps) {
   return (
     <div
       id="playerCard"
-      className="flex flex-col justify-between items-center h-80 w-3/4 md:w-1/2 bg-blue-300 mx-auto rounded-lg"
+      className="flex flex-col justify-between items-center h-80 w-3/4 md:w-1/2 bg-blue-300 mx-auto rounded-lg mt-3"
     >
       <div id="pillRole" className="mt-[-5%]">
         <h1 className="text-marron font-bold text-center bg-jauneHerouville px-4 py-1 rounded-full">
