@@ -4,7 +4,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
 import GenericPage from "@/components/GenericPage";
+import { Montserrat } from "next/font/google";
 
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 export default function RootLayout({
   children,
@@ -18,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <link rel="icon" href="/favicon.ico" />
-      <body className="w-full h-full">
+      <body className={`${montserrat.variable} font-sans w-full h-full `}>
           <Navbar />
           {isHomepage ? (
             children

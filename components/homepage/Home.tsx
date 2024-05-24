@@ -30,7 +30,6 @@ export default function Home() {
           content="actualités, news, articles, informations"
         />
       </Head>
-      <div className={`${montserrat.variable} font-sans w-full `}>
         <div id="homeHeader" className="bg-photo1 w-full h-screen flex justify-center items-center  bg-no-repeat z-0">
           <div>
             <Image
@@ -249,7 +248,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 }
