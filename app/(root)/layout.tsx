@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import GenericPage from "@/components/GenericPage";
 import { Montserrat } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
+import { Toaster, toast } from 'sonner'
+
 
 
 const montserrat = Montserrat({
@@ -26,6 +28,8 @@ export default function RootLayout({
       <link rel="icon" href="/favicon.ico" />
       <body className={`${montserrat.variable} font-sans w-full h-full `}>
           <Navbar />
+          <Toaster richColors position="bottom-right" />
+
           {isHomepage ? (
             children
           ) : (
@@ -33,7 +37,6 @@ export default function RootLayout({
               {children}
             </GenericPage>
           )}
-          
           <Footer />
       </body>
     </html>

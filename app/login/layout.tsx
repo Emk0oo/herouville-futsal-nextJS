@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import "../globals.css";
 import { Montserrat } from "next/font/google";
 
@@ -19,7 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} font-sans w-full `}>{children}</body>
+      <body className={`${montserrat.variable} font-sans w-full `}>{children}
+      <Toaster richColors position="top-right" />
+
+      </body>
     </html>
   )
 }
