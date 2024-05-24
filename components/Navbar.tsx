@@ -70,27 +70,27 @@ function Navbar() {
         >
           <ul className="flex flex-col text-white text-lg">
             <li className="px-11 py-7 border-b border-bleuBorder">
-              <a href="/equipe" className="hover:text-jauneHerouville">
+              <Link href="/equipe" className="hover:text-jauneHerouville">
                 Equipe
-              </a>
+              </Link>
             </li>
             <li className="px-11 py-7 border-b border-bleuBorder">
-              <a href="/actualites" className="hover:text-jauneHerouville">
+              <Link href="/actualites" className="hover:text-jauneHerouville">
                 Actualités
-              </a>
+              </Link>
             </li>
             <li className="px-11 py-7 border-b border-bleuBorder">
-              <a href="/calendrier" className="hover:text-jauneHerouville">
+              <Link href="/calendrier" className="hover:text-jauneHerouville">
                 Calendrier
-              </a>
+              </Link>
             </li>
             <li className="px-11 py-7 border-b border-bleuBorder">
-              <a href="/boutique" className="hover:text-jauneHerouville">
+              <Link href="/boutique" className="hover:text-jauneHerouville">
                 Boutique
-              </a>
+              </Link>
             </li>
             <li className="px-11 py-7 bg-jauneHerouville flex flex-row gap-6 justify-center md:justify-start">
-              <a href="https://www.facebook.com/herouvillefutsalforceethonneur/?locale=fr_FR">
+              <Link href="https://www.facebook.com/herouvillefutsalforceethonneur/?locale=fr_FR">
                 <Image
                   src="/facebook.png"
                   alt="Logo de Facebook"
@@ -98,8 +98,8 @@ function Navbar() {
                   height={30}
                   className="object-cover"
                 />
-              </a>
-              <a href="https://twitter.com/futsalclubhsc">
+              </Link>
+              <Link href="https://twitter.com/futsalclubhsc">
                 <Image
                   src="/twitter.png"
                   alt="Logo de Twitter"
@@ -107,8 +107,8 @@ function Navbar() {
                   height={30}
                   className="object-cover"
                 />
-              </a>
-              <a href="https://www.instagram.com/herouvillefutsalhf/">
+              </Link>
+              <Link href="https://www.instagram.com/herouvillefutsalhf/">
                 <Image
                   src="/instagram.png"
                   alt="Logo d'Instagram"
@@ -116,7 +116,7 @@ function Navbar() {
                   height={30}
                   className="object-cover"
                 />
-              </a>
+              </Link>
               <Link href="/login">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -216,14 +216,14 @@ function Navbar() {
               >
                 Se connecter
               </Link>
-              <a
+              <Link
                 href="/register"
                 className="text-gray-700 block px-4 py-2 text-sm"
                 role="menuitem"
                 id="menu-item-1"
               >
                 S&apos;inscrire
-              </a>
+              </Link>
               
             </div>
           </div>

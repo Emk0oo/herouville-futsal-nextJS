@@ -41,7 +41,7 @@ const LoginForm = () => {
     >
       <div
         id="loginCard"
-        className="flex flex-col w-2/3 md:w-1/4 h-2/3 md:h-[50%] items-center shadow-lg rounded-lg bg-white"
+        className="flex flex-col w-2/3 md:w-1/4 h-[50%] md:h-[50%] items-center shadow-lg rounded-lg bg-white"
       >
         <div
           id="loginContent"
