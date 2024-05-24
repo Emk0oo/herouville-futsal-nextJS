@@ -1,7 +1,11 @@
+import ReglagesComponent from "@/components/reglage/ReglageComponent";
 import React from "react";
 
 const Reglages = () => {
-  return <div>Reglages</div>;
+  return <>
+    <ReglagesComponent />
+
+  </>;
 }
 
 export default Reglages;
