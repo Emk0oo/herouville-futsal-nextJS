@@ -26,7 +26,7 @@ const ForgotPasswordForm = () => {
       );
       setError("");
       toast.success(
-        "Un lien de récupération a été envoyé à votre adresse e-mail."
+        message
       );
     } else {
       const errorData = await res.json();

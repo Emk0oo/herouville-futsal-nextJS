@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 const ResetPasswordForm = ({ token }: { token: string }) => {
   const [newPassword, setNewPassword] = useState("");
@@ -25,7 +26,8 @@ const ResetPasswordForm = ({ token }: { token: string }) => {
     });
 
     if (res.ok) {
-      setMessage("Password has been reset successfully.");
+      setMessage("Le mot de passe a été réinitialisé avec succès. Vous pouvez maintenant vous connecter.");
+      toast.success(message);
       setError("");
       router.push("/login");
     } else {
@@ -77,8 +79,6 @@ const ResetPasswordForm = ({ token }: { token: string }) => {
               Reset Password
             </button>
           </form>
-          {message && <p className="text-green-500">{message}</p>}
-          {error && <p className="text-red-500">{error}</p>}
         </div>
       </div>
     </div>
