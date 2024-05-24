@@ -10,7 +10,6 @@ const useAuthCheck = () => {
     const secret = process.env.NEXT_PUBLIC_JWT_SECRET;
 
     if (!token || !secret) {
-      router.push("/login");
       return;
     }
 

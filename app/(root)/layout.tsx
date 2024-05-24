@@ -1,10 +1,10 @@
 "use client";
 import "../globals.css";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
 import GenericPage from "@/components/GenericPage";
 import { Montserrat } from "next/font/google";
+import Navbar from "@/components/navbar/Navbar";
 
 
 const montserrat = Montserrat({
