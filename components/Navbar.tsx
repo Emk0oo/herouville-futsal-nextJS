@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../public/logo.png";
 import logo2 from "../public/logo2.png";
 import Link from "next/link";
@@ -26,8 +26,15 @@ function Navbar() {
     setIsProfileOpen(!isProfileOpen);
   };
 
+  useEffect(() => {
+    if (!isOpen) {
+      setIsProfileOpen(false);
+    }
+  }, [isOpen]);
+
+
   return (
-    <nav className={`${montserrat.variable} font-sans w-full h-full`}>
+    <nav className="w-full h-full">
       <div id="mobileNavbar" className="xl:hidden">
         <div
           id="headerNavbar"
@@ -117,23 +124,54 @@ function Navbar() {
                   className="object-cover"
                 />
               </Link>
-              <Link href="/login">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="6" r="4" fill="currentColor" />
-                  <path
-                    fill="currentColor"
-                    d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5"
-                    opacity=".5"
-                  />
-                </svg>
-              </Link>
+              <button
+                onClick={toggleProfileMenu}
+                className="focus:outline-none"
+              >
+                <FaRegUser size={25} />
+              </button>
+              <button className="focus:outline-none">
+                <IoBagOutline size={25} />
+              </button>
             </li>
           </ul>
+        </div>
+        <div
+          id="mobileProfileDropdown"
+          className={`${
+            isProfileOpen ? "max-h-screen" : "max-h-0"
+          } transition-max-height duration-500 overflow-hidden bg-bleuHerouville fixed top-20 left-0 right-0 z-40 shadow-lg `}
+        >
+          <div
+            id="contentMobileProfileDropdown"
+            className="w-full text-end flex flex-col"
+          >
+            <ul className="flex flex-col text-white text-lg divide-y divide-white">
+              <li className="px-11 py-7 border-b border-bleuBorder">
+                <button
+                  className="hover:text-jauneHerouville"
+                  onClick={toggleProfileMenu}
+                >
+                  Fermer
+                </button>
+              </li>
+              <li className="px-11 py-7 border-b border-bleuBorder">
+                <Link href="/actualites" className="hover:text-jauneHerouville">
+                  Commandes
+                </Link>
+              </li>
+              <li className="px-11 py-7 border-b border-bleuBorder">
+                <Link href="/calendrier" className="hover:text-jauneHerouville">
+                  Réglages
+                </Link>
+              </li>
+              <li className="px-11 py-7 border-b border-bleuBorder">
+                <Link href="/boutique" className="hover:text-jauneHerouville">
+                  Déconnexion
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div
@@ -193,8 +231,7 @@ function Navbar() {
                 <FaRegUser size={25} />
               </button>
               <button className="focus:outline-none">
-              <IoBagOutline size={25} />
-
+                <IoBagOutline size={25} />
               </button>
             </li>
           </ul>
@@ -224,7 +261,6 @@ function Navbar() {
               >
                 S&apos;inscrire
               </Link>
-              
             </div>
           </div>
         )}
