@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import logo from "@/public/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -83,6 +84,7 @@ const LoginForm = () => {
               >
                 Mot de passe
               </label>
+              <Link href="/login/forgot-password" className="text-sm text-bleuHerouville">Mot de passe oublié ?</Link>
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
