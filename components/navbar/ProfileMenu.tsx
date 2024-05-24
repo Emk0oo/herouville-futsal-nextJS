@@ -41,13 +41,13 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
             <>
               <li className="px-11 py-7 flex items-center gap-1">
                 <FaListUl size={20} />
-                <Link href="/actualites" className="hover:text-jauneHerouville">
+                <Link href="/commandes" className="hover:text-jauneHerouville">
                   Commandes
                 </Link>
               </li>
               <li className="px-11 py-7 flex items-center gap-1">
                 <LuSettings size={20} />
-                <Link href="/calendrier" className="hover:text-jauneHerouville">
+                <Link href="/reglages" className="hover:text-jauneHerouville">
                   Réglages
                 </Link>
               </li>
@@ -56,7 +56,7 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
                 <button
                   onClick={() => {
                     localStorage.removeItem("token");
-                    window.location.reload(); // Reload page to update auth state
+                    window.location.reload();
                   }}
                 >
                   Déconnexion

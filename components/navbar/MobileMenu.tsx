@@ -66,9 +66,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           <button onClick={toggleProfileMenu} className="focus:outline-none">
             <FaRegUser size={25} />
           </button>
-          <button className="focus:outline-none">
+          <Link href="/panier" className="focus:outline-none">
             <IoBagOutline size={25} />
-          </button>
+          </Link>
         </li>
       </ul>
     </div>

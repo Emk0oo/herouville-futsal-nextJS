@@ -33,6 +33,7 @@ export default function RootLayout({
               {children}
             </GenericPage>
           )}
+          
           <Footer />
       </body>
     </html>
