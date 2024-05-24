@@ -86,7 +86,7 @@ exports.forgotPassword = (req, res) => {
       from: process.env.MAILER_EMAIL,
       to: email,
       subject: 'Password Reset',
-      text: `You requested a password reset. Click the link to reset your password: http://localhost:3000/reset-password/${token}`,
+      text: `You requested a password reset. Click the link to reset your password: http://localhost:3000/login/reset-password/${token}`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
