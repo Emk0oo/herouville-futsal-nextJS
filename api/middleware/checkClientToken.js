@@ -20,3 +20,5 @@ const checkClientToken = (req, res, next) => {
     next();
   });
 };
+
+module.exports = checkClientToken;

@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const articleController = require('../controllers/article.controller');
-const checkToken  = require('../middleware/checkToken');
+const checkToken  = require('../middleware/checkAdminToken');
 
 // Configuration de Multer pour stocker les images dans le dossier public
 const storage = multer.diskStorage({

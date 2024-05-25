@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 4000
 const cors = require('cors');
-const checkToken = require('./middleware/checkToken.js');
+const checkToken = require('./middleware/checkAdminToken.js');
 
 app.use(express.json());
 
@@ -27,7 +27,7 @@ app.use('/article', require('./routes/article.route.js'));
 
 app.use('/auth', require('./routes/auth.route.js'));
 
-// app.use('/user', require('./routes/user.route.js'));
+app.use('/user', require('./routes/user.route.js'));
 
 // app.use('/player', require('./routes/player.route.js'));
 
