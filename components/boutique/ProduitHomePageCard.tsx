@@ -21,7 +21,7 @@ const ProduitHomePageCard = ({
   return (
     <div
       id="contentProduit"
-      className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden"
+      className="bg-white border w-full border-gray-200 rounded-lg shadow-lg overflow-hidden"
     >
       <div id="imageProduit" className="relative w-full h-48 rounded-t-lg">
         <Link href={`/boutique/${id}`}>

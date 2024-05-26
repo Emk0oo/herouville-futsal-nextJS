@@ -9,7 +9,7 @@ const BoutiqueHomePage = () => {
       <div className="flex justify-center w-full">
         <div
           id="boutiqueContent"
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 px-2 mt-2 "
+          className="w-1/2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 px-2 mt-2 "
         >
           <ProduitHomePageCard
             imageURL="/actu1.png"
