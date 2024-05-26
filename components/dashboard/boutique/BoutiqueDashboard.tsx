@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Product } from "@/types/Product";
 import GenericTable from "../GenericTable";
+import { toast } from "sonner";
 
 export default function BoutiqueDashboard() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -45,8 +46,10 @@ export default function BoutiqueDashboard() {
       });
       if (!response.ok) {
         throw new Error("Failed to delete product");
+        toast.error("La suppression a échoué")
       }
       setProducts(products.filter((product) => product.id !== id));
+      toast.success("Produit supprimé avec succès");
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);
