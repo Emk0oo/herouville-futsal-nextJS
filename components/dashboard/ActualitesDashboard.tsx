@@ -1,4 +1,3 @@
-// dashboard/ActualitesDashboard.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -9,8 +8,12 @@ export default function ActualitesDashboard() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
+    // Access localStorage and set the token when the component mounts
+    setToken(localStorage.getItem("token"));
+
     const fetchArticles = async () => {
       try {
         const response = await fetch("http://localhost:4000/article");
@@ -19,7 +22,7 @@ export default function ActualitesDashboard() {
         }
         const data: Article[] = await response.json();
 
-        // Formater les dates ici
+        // Format dates here
         const formattedData = data.map(article => ({
           ...article,
           date: new Date(article.date).toLocaleDateString('fr-FR', {
@@ -43,8 +46,6 @@ export default function ActualitesDashboard() {
 
     fetchArticles();
   }, []);
-
-  const token = localStorage.getItem("token");
 
   const handleDelete = async (id: number) => {
     try {
