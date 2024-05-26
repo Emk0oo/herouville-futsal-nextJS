@@ -8,7 +8,6 @@ interface ProduitHomePageCardProps {
   description: string;
   imageURL: string;
   price: number;
-  link: string;
 }
 
 const ProduitHomePageCard = ({
@@ -29,7 +28,8 @@ const ProduitHomePageCard = ({
             src={imageURL}
             alt={title}
             layout="fill"
-            objectFit="cover"
+
+            objectFit="contain"
             className="rounded-t-lg"
           />
         </Link>
