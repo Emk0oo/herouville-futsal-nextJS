@@ -19,22 +19,6 @@ app.use(
   })
 );
 
-const mysql = require('mysql2');
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
-});
-
-connection.connect((err) => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-    return;
-  }
-  console.log('Connected to the database');
-});
-
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
@@ -46,6 +30,7 @@ app.listen(port, () => {
 app.use('/article', require('./routes/article.route.js'));
 app.use('/auth', require('./routes/auth.route.js'));
 app.use('/user', require('./routes/user.route.js'));
+app.use('/product', require('./routes/product.route.js'));
 
 // app.use('/player', require('./routes/player.route.js'));
 // app.use('/calendar', require('./routes/calendar.route.js'));
