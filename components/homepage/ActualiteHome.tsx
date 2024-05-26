@@ -49,17 +49,6 @@ export default function ActualiteHome() {
 
   return (
     <>
-      <Head>
-        <title>Actualités - Mon Site</title>
-        <meta
-          name="description"
-          content="Consultez les dernières actualités de notre site."
-        />
-        <meta
-          name="keywords"
-          content="actualités, news, articles, informations"
-        />
-      </Head>
       <div className="flex justify-center w-full">
         {isLoading ? (
           <p>Loading...</p>
