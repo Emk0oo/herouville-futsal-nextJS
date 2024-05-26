@@ -4,6 +4,7 @@ import React from "react";
 import { Montserrat } from "next/font/google";
 import Dashboard from "@/components/Dashboard";
 import useAuthCheckDashboard from "@/hooks/useAuthCheckDashboard";
+import { Toaster } from "sonner";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,6 +17,7 @@ const DashboardLayoutComponent: React.FC<{ children: React.ReactNode }> = ({ chi
     <html lang="fr">
       <link rel="icon" href="/favicon.ico" />
       <body className={`${montserrat.variable} font-sans`}>
+        <Toaster richColors position="top-right" />
         <Dashboard>{children}</Dashboard>
       </body>
     </html>

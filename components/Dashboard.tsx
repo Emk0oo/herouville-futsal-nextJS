@@ -42,7 +42,7 @@ const Dashboard = ({ children }: DashboardProps) => {
       <aside
         id="sidebar"
         className={`absolute top-0 left-0 transition-all duration-300 h-full shadow overflow-hidden bg-white z-20 ${
-          isSidebarOpen ? "w-1/6" : "w-[5%] "
+          isSidebarOpen ? "w-20 md:w-1/6" : "w-[5%] "
         }`}
       >
         <div id="marque" className="flex items-center gap-2 px-5 py-4">

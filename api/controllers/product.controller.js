@@ -4,7 +4,7 @@ const connection = require('../config/database');
 exports.createProduct = (req, res) => {
   const { name, description, price, stock } = req.body;
   const imageURL = req.file ? `/${req.file.originalname}` : null; // Chemin de l'image téléchargée
-  const query = 'INSERT INTO produits (name, description, price, stock, imageURL) VALUES (?, ?, ?, ?, ?)';
+  const query = 'INSERT INTO produit (name, description, price, stock, imageURL) VALUES (?, ?, ?, ?, ?)';
   connection.query(query, [name, description, price, stock, imageURL], (err, results) => {
     if (err) {
       return res.status(500).json({ error: err.message });
@@ -13,9 +13,9 @@ exports.createProduct = (req, res) => {
   });
 };
 
-// Obtenir tous les produits
+// Obtenir tous les produit
 exports.getProducts = (req, res) => {
-  const query = 'SELECT * FROM produits';
+  const query = 'SELECT * FROM produit';
   connection.query(query, (err, results) => {
     if (err) {
       return res.status(500).json({ error: err.message });
@@ -27,7 +27,7 @@ exports.getProducts = (req, res) => {
 // Obtenir un produit par ID
 exports.getProductById = (req, res) => {
   const { id } = req.params;
-  const query = 'SELECT * FROM produits WHERE id = ?';
+  const query = 'SELECT * FROM produit WHERE id = ?';
   connection.query(query, [id], (err, results) => {
     if (err) {
       return res.status(500).json({ error: err.message });
@@ -45,7 +45,7 @@ exports.updateProduct = (req, res) => {
   const { name, description, price, stock } = req.body;
 
   // Fetch the current image URL from the database
-  const getCurrentImageURLQuery = 'SELECT imageURL FROM produits WHERE id = ?';
+  const getCurrentImageURLQuery = 'SELECT imageURL FROM produit WHERE id = ?';
   connection.query(getCurrentImageURLQuery, [id], (err, results) => {
     if (err) {
       return res.status(500).json({ error: err.message });
@@ -61,7 +61,7 @@ exports.updateProduct = (req, res) => {
       imageURL = `/${req.file.originalname}`; // Use new image URL if provided
     }
 
-    const query = 'UPDATE produits SET name = ?, description = ?, price = ?, stock = ?, imageURL = ? WHERE id = ?';
+    const query = 'UPDATE produit SET name = ?, description = ?, price = ?, stock = ?, imageURL = ? WHERE id = ?';
     const params = [name, description, price, stock, imageURL, id];
 
     connection.query(query, params, (err, results) => {
@@ -79,7 +79,7 @@ exports.updateProduct = (req, res) => {
 // Supprimer un produit par ID
 exports.deleteProduct = (req, res) => {
   const { id } = req.params;
-  const query = 'DELETE FROM produits WHERE id = ?';
+  const query = 'DELETE FROM produit WHERE id = ?';
   connection.query(query, [id], (err, results) => {
     if (err) {
       return res.status(500).json({ error: err.message });
