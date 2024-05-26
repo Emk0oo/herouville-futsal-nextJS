@@ -26,19 +26,21 @@ export const metadata: Metadata = {
 const Equipe = () => {
   return (
     <>
-      <div
-        id="equipeContent"
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 px-2 mt-2 "
-      >
-        {playerAPI.map((player, index) => (
-          <PlayerCard
-            key={index}
-            role={player.role}
-            name={player.name}
-            surname={player.surname}
-            number={player.number}
-          />
-        ))}
+      <div className="flex justify-center w-full ">
+        <div
+          id="equipeContent"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:mx-[10%]  mt-2 w-full"
+        >
+          {playerAPI.map((player, index) => (
+            <PlayerCard
+              key={index}
+              role={player.role}
+              name={player.name}
+              surname={player.surname}
+              number={player.number}
+            />
+          ))}
+        </div>
       </div>
     </>
   );
