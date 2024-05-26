@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Create a new article
-router.post('/', checkToken, upload.single('image'), articleController.createArticle);
+router.post('/', checkToken,  upload.single('image'), articleController.createArticle);
 
 // Get all articles
 router.get('/', articleController.getArticles);
@@ -27,9 +27,9 @@ router.get('/', articleController.getArticles);
 router.get('/:id', articleController.getArticleById);
 
 // Update an article by ID
-router.put('/:id', checkToken, upload.single('image'), articleController.updateArticle);
+router.put('/:id', checkToken,  upload.single('image'), articleController.updateArticle);
 
 // Delete an article by ID
-router.delete('/:id', checkToken, articleController.deleteArticle);
+router.delete('/:id', checkToken,  articleController.deleteArticle);
 
 module.exports = router;

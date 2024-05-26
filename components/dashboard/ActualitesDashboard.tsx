@@ -44,10 +44,15 @@ export default function ActualitesDashboard() {
     fetchArticles();
   }, []);
 
+  const token = localStorage.getItem("token");
+
   const handleDelete = async (id: number) => {
     try {
       const response = await fetch(`http://localhost:4000/article/${id}`, {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`, 
+        },
       });
       if (!response.ok) {
         throw new Error("Failed to delete article");

@@ -37,10 +37,15 @@ const ActualiteEditDashboard = () => {
     }
   }, [id]);
 
+  const token = localStorage.getItem("token");
+
   const handleSubmit = async (data: FormData) => {
     try {
       const response = await fetch(`http://localhost:4000/article/${id}`, {
         method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`, 
+        },
         body: data,
       });
 

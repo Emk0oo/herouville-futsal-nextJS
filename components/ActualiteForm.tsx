@@ -43,7 +43,8 @@ const getInitialFormData = () => {
 };
 
 const ActualiteForm = () => {
-  const [formData, setFormData] = useState<Record<string, string>>(getInitialFormData);
+  const [formData, setFormData] =
+    useState<Record<string, string>>(getInitialFormData);
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
@@ -69,11 +70,15 @@ const ActualiteForm = () => {
     if (imageFile) {
       data.append("image", imageFile);
     }
+    const token = localStorage.getItem("token"); 
 
     try {
       const res = await fetch("http://localhost:4000/article", {
         method: "POST",
-        body: data,
+        headers: {
+          Authorization: `Bearer ${token}`, 
+        },
+        body: data, // Utilisation de FormData directement
       });
 
       if (res.ok) {
