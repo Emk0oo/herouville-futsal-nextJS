@@ -6,14 +6,19 @@ import React, { useState, useEffect } from "react";
 
 const ActualiteEditDashboard = () => {
   const pathname = usePathname();
-  const id = pathname.split("/").pop(); // Extraire l'ID de l'URL
+  const id = pathname.split("/").pop(); // Extract ID from URL
 
   const [initialData, setInitialData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
-    if (id) {
+    setToken(localStorage.getItem("token")); // Access localStorage after component has mounted
+  }, []);
+
+  useEffect(() => {
+    if (id && token) {
       const fetchArticle = async () => {
         try {
           const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/article/${id}`);
@@ -35,9 +40,7 @@ const ActualiteEditDashboard = () => {
 
       fetchArticle();
     }
-  }, [id]);
-
-  const token = localStorage.getItem("token");
+  }, [id, token]);
 
   const handleSubmit = async (data: FormData) => {
     try {
@@ -54,7 +57,7 @@ const ActualiteEditDashboard = () => {
       }
 
       console.log("Article mis à jour avec succès!");
-      window.location.href = "/dashboard/actualites"; // Utilisez window.location.href pour rediriger
+      window.location.href = "/dashboard/actualites"; // Use window.location.href for redirection
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);
@@ -63,6 +66,10 @@ const ActualiteEditDashboard = () => {
       }
     }
   };
+
+  if (!token) {
+    return <p>Veuillez vous connecter pour accéder à cette page</p>;
+  }
 
   if (isLoading) {
     return <p>Loading...</p>;

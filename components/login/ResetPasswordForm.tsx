@@ -17,7 +17,7 @@ const ResetPasswordForm = ({ token }: { token: string }) => {
       return;
     }
 
-    const res = await fetch(`http://localhost:4000/auth/reset-password/${token}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/reset-password/${token}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

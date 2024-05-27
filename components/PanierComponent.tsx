@@ -55,7 +55,7 @@ const PanierComponent = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:4000/payment/create-checkout-session",
+        `${process.env.NEXT_PUBLIC_API_URL}/payment/create-checkout-session`,
         {
           method: "POST",
           headers: {
@@ -105,7 +105,7 @@ const PanierComponent = () => {
               >
                 <div className="flex items-center gap-2">
                   <Image
-                    src={item.imageURL}
+                    src={`data:image/jpeg;base64,${item.imageBase64}`}
                     alt={item.title}
                     width={100}
                     height={100}
