@@ -6,7 +6,7 @@ interface Produit {
   id: string;
   name: string;
   description: string;
-  imageURL: string;
+  imageBase64: string; // Changed from imageURL to imageBase64
   price: number;
 }
 
@@ -58,7 +58,7 @@ const BoutiqueHomePage = () => {
             id={produit.id}
             title={produit.name}
             description={produit.description}
-            imageURL={produit.imageURL}
+            imageBase64={produit.imageBase64} // Changed from imageURL to imageBase64
             price={produit.price}
           />
         ))}

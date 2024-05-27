@@ -8,7 +8,7 @@ interface ProduitHomePageCardProps {
   id: string;
   title: string;
   description: string;
-  imageURL: string;
+  imageBase64: string; // Changed from imageURL to imageBase64
   price: number;
 }
 
@@ -16,7 +16,7 @@ const ProduitHomePageCard = ({
   id,
   title,
   description,
-  imageURL,
+  imageBase64, // Changed from imageURL to imageBase64
   price,
 }: ProduitHomePageCardProps) => {
   const handleAddToCart = () => {
@@ -24,7 +24,7 @@ const ProduitHomePageCard = ({
       id,
       title,
       description,
-      imageURL,
+      imageBase64, // Changed from imageURL to imageBase64
       price,
       quantity: 1,
     };
@@ -32,6 +32,7 @@ const ProduitHomePageCard = ({
     toast.success("Produit ajouté au panier");
   };
 
+  const imageURL=`data:image/jpeg;base64,${imageBase64}`;
   return (
     <div
       id="contentProduit"
@@ -40,7 +41,7 @@ const ProduitHomePageCard = ({
       <div id="imageProduit" className="relative w-full h-48 rounded-t-lg">
         <Link href={`/boutique/${id}`}>
           <Image
-            src={imageURL}
+            src={imageURL} // Changed from imageURL to imageBase64
             alt={title}
             layout="fill"
             objectFit="contain"

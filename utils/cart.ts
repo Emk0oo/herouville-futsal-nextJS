@@ -3,9 +3,9 @@ export interface CartItem {
     id: string;
     title: string;
     description: string;
-    imageURL: string;
     price: number;
     quantity: number;
+    imageBase64: string;
   }
   
   export const getCart = (): CartItem[] => {

@@ -16,7 +16,7 @@ export default function BoutiqueDashboard() {
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:4000/product");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`);
         if (!response.ok) {
           throw new Error("Failed to fetch products");
         }
@@ -38,7 +38,7 @@ export default function BoutiqueDashboard() {
 
   const handleDelete = async (id: number) => {
     try {
-      const response = await fetch(`http://localhost:4000/product/${id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
