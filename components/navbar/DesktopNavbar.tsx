@@ -16,7 +16,6 @@ interface DesktopNavbarProps {
 
 const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ isProfileOpen, toggleProfileMenu }) => {
   const isAuthenticated = useAuthMenuProfileCheck(); // Utilisation du hook d'authentification
-  console.log(isAuthenticated);
 
   return (
     <div
