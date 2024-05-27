@@ -89,7 +89,7 @@ const PanierComponent = () => {
   };
 
   return (
-    <div className="flex justify-center w-full h-full">
+    <div className="flex justify-center w-full h-full md:px-32">
       <div className="w-3/4 p-8 bg-white shadow-xl rounded-lg">
         <h1 className="text-2xl font-semibold text-gray-700 mb-4">
           Votre Panier
@@ -159,12 +159,14 @@ const PanierComponent = () => {
                 {calculateTotal()} €
               </span>
             </div>
-            <button
-              onClick={handleCheckout}
-              className="mt-4 w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              Payer avec Stripe
-            </button>
+            <div className="flex justify-center items-center mt-6">
+              <button
+                onClick={handleCheckout}
+                className=" mt-4 w-full md:w-1/3  py-2 px-4 bg-indigo-600 text-white text-xl font-semibold rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                Payer
+              </button>
+            </div>
           </div>
         )}
       </div>
