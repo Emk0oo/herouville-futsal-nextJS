@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { addToCart, CartItem } from "@/utils/cart";
 
 interface ProduitHomePageCardProps {
   id: string;
@@ -17,6 +18,18 @@ const ProduitHomePageCard = ({
   imageURL,
   price,
 }: ProduitHomePageCardProps) => {
+  const handleAddToCart = () => {
+    const item: CartItem = {
+      id,
+      title,
+      description,
+      imageURL,
+      price,
+      quantity: 1,
+    };
+    addToCart(item);
+  };
+
   return (
     <div
       id="contentProduit"
@@ -28,7 +41,6 @@ const ProduitHomePageCard = ({
             src={imageURL}
             alt={title}
             layout="fill"
-
             objectFit="contain"
             className="rounded-t-lg"
           />
@@ -41,7 +53,10 @@ const ProduitHomePageCard = ({
         <span className="text-xl font-bold text-gray-800">{price} €</span>
 
         <div className="flex justify-between items-center mt-4">
-          <button className="px-3 py-1 bg-gray-800 text-white text-xs font-bold uppercase rounded">
+          <button
+            onClick={handleAddToCart}
+            className="px-3 py-1 bg-gray-800 text-white text-xs font-bold uppercase rounded"
+          >
             Ajouter au panier
           </button>
         </div>
