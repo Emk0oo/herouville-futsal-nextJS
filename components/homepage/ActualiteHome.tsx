@@ -16,7 +16,7 @@ export default function ActualiteHome() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const res = await fetch("http://localhost:4000/article");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/article`);
         if (!res.ok) {
           throw new Error("Failed to fetch articles");
         }

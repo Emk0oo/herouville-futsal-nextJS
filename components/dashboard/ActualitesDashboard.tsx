@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Article } from "@/types/Article";
 import GenericTable from "./GenericTable";
+import { toast } from "sonner";
 
 export default function ActualitesDashboard() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -16,7 +17,7 @@ export default function ActualitesDashboard() {
 
     const fetchArticles = async () => {
       try {
-        const response = await fetch("http://localhost:4000/article");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/article`);
         if (!response.ok) {
           throw new Error("Failed to fetch articles");
         }
@@ -49,7 +50,7 @@ export default function ActualitesDashboard() {
 
   const handleDelete = async (id: number) => {
     try {
-      const response = await fetch(`http://localhost:4000/article/${id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/article/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`, 
@@ -59,11 +60,14 @@ export default function ActualitesDashboard() {
         throw new Error("Failed to delete article");
       }
       setArticles(articles.filter((article) => article.id !== id));
+      toast.success("Article supprimé avec succès!");
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);
+        toast.error("Erreur lors de la suppression de l'article");
       } else {
         setError("An unknown error occurred");
+        toast.error("Erreur lors de la suppression de l'article");
       }
     }
   };
