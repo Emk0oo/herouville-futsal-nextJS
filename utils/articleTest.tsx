@@ -9,6 +9,7 @@ export interface Article {
     entete: string;
     content: string;
     content2: string;
+    imageBase64: string;
   }
   
  

@@ -1,3 +1,4 @@
+// ActualiteHome.tsx
 "use client";
 import ActualiteCard from "@/components/ActualiteCard";
 import Pagination from "@/components/Pagination";
@@ -59,7 +60,7 @@ export default function ActualiteHome() {
             {getPaginatedData().map((card, index) => (
               <ActualiteCard
                 key={index}
-                imageUrl={card.imageURL}
+                imageBase64={card.imageBase64}
                 title={card.title}
                 date={card.date}
                 link={`/actualites/${card.id}`}

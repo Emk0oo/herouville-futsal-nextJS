@@ -1,15 +1,16 @@
 // components/ActualiteArticle.tsx
-import Image from "next/image";
 import React from "react";
 import { Article } from "@/utils/articleTest";
+import Image from "next/image";
 
 interface ActualiteArticleProps {
   article: Article;
 }
 
 const ActualiteArticle: React.FC<ActualiteArticleProps> = ({ article }) => {
-  const { imageURL, title, title2, title3, date, entete, content, content2 } =
-    article;
+  const { imageURL, title, title2, title3, date, entete, content, content2, imageBase64 } = article;
+  console.log(article)
+  const imageSrc = `data:image/jpeg;base64,${imageBase64}`;
 
   return (
     <div id="Article" className="w-full h-full p-4 md:mt-[3%]">
@@ -18,8 +19,8 @@ const ActualiteArticle: React.FC<ActualiteArticleProps> = ({ article }) => {
         className="flex flex-col md:flex-row md:w-2/3 shadow-xl mx-auto divide-y-4 md:divide-x-4 md:divide-y-0 divide-jauneHerouville"
       >
         <div className="w-full md:w-2/3 relative">
-          <Image
-            src={imageURL}
+        <Image  
+            src={imageSrc}
             alt={title}
             layout="responsive"
             width={700} // Set the width and height according to your image aspect ratio
@@ -59,3 +60,5 @@ const ActualiteArticle: React.FC<ActualiteArticleProps> = ({ article }) => {
 };
 
 export default ActualiteArticle;
+
+

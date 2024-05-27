@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import { toast } from "sonner";
 
 // Définition des types pour les champs du formulaire
 type FormFieldConfig = {
@@ -44,7 +45,7 @@ const getInitialFormData = () => {
 
 const ActualiteForm = () => {
   const [formData, setFormData] =
-    useState<Record<string, string>>(getInitialFormData);
+    useState<Record<string, string>>(getInitialFormData());
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
@@ -70,26 +71,29 @@ const ActualiteForm = () => {
     if (imageFile) {
       data.append("image", imageFile);
     }
-    const token = localStorage.getItem("token"); 
+    const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:4000/article", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/article`, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${token}`, 
+          Authorization: `Bearer ${token}`,
         },
-        body: data, // Utilisation de FormData directement
+        body: data,
       });
 
       if (res.ok) {
         setSubmitStatus("Article créé avec succès!");
         setFormData(getInitialFormData());
         setImageFile(null);
+        toast.success("Article créé avec succès!");
       } else {
         setSubmitStatus("Erreur lors de la création de l'article");
+        toast.error("Erreur lors de la création de l'article");
       }
     } catch (error) {
       setSubmitStatus("Erreur lors de la création de l'article");
+      toast.error("Erreur lors de la création de l'article");
     }
   };
 
@@ -123,9 +127,6 @@ const ActualiteForm = () => {
       >
         Créer l&apos;article
       </button>
-      {submitStatus && (
-        <p className="mt-4 text-sm text-red-500">{submitStatus}</p>
-      )}
     </form>
   );
 };

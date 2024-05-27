@@ -42,7 +42,7 @@ function Footer() {
                 width={25}
                 height={16}
               />
-              <p>21 Rue du Club 1400 Herouville</p>
+              <p>21 Rue du Club 14000 Herouville</p>
             </div>
             <div className="flex flex-row gap-2 justify-center lg:justify-start">
               <Image src={phone} alt="icone téléphone" width={25} height={16} />

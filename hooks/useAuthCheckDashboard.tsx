@@ -17,7 +17,6 @@ const useAuthCheckDashboard = () => {
 
     try {
       const decodedJwt = jwt.decode(token);
-      console.log(decodedJwt);
 
       jwt.verify(token, secret, (err, decoded) => {
         if (err) {
@@ -26,7 +25,6 @@ const useAuthCheckDashboard = () => {
           return;
         }
         if (decoded && typeof decoded !== "string") {
-          console.log(decoded);
           setUser(decoded);
           if(decoded.role !== 1) {
             router.push("/");

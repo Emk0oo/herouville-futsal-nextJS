@@ -1,25 +1,25 @@
 // ActualiteCard.tsx
 import React from "react";
-import Image from "next/image";
 import ButtonLink from "./ButtonLink";
+import Image from "next/image";
 
 interface ActualiteCardProps {
-  imageUrl: string;
+  imageBase64: string;
   title: string;
   date: string;
   link: string;
 }
 
-function ActualiteCard({ imageUrl, title, date, link }: ActualiteCardProps) {
+function ActualiteCard({ imageBase64, title, date, link }: ActualiteCardProps) {
+  const imageSrc = `data:image/jpeg;base64,${imageBase64}`;
   return (
     <div className="bg-white rounded-lg shadow flex flex-col items-center text-center w-5/6 h-full justify-center mx-auto">
-      <div className="relative w-full h-48 rounded-t-lg">
+      <div className="relative w-full h-48 rounded-t-lg overflow-hidden">
         <Image
-          src={imageUrl}
-          alt={title}
+          src={imageSrc}
+          alt="Image de l'actualité"
           layout="fill"
           objectFit="cover"
-          className="rounded-t-lg"
         />
       </div>
       <div className="p-4 h-52">
