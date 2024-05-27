@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { addToCart, CartItem } from "@/utils/cart";
+import { toast } from "sonner";
 
 interface ProduitHomePageCardProps {
   id: string;
@@ -28,6 +29,7 @@ const ProduitHomePageCard = ({
       quantity: 1,
     };
     addToCart(item);
+    toast.success("Produit ajouté au panier");
   };
 
   return (

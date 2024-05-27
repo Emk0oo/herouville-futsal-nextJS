@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { getCart, saveCart, CartItem } from "@/utils/cart";
 import { FaTrashAlt } from "react-icons/fa";
+import Image from "next/image";
 
 const PanierComponent = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -42,10 +43,12 @@ const PanierComponent = () => {
                 className="flex items-center justify-between mb-4 border-b pb-2"
               >
                 <div className="flex items-center">
-                  <img
+                  <Image
                     src={item.imageURL}
                     alt={item.title}
-                    className="w-16 h-16 object-cover rounded mr-4"
+                    width={100}
+                    height={100}
+                    className="rounded-lg"
                   />
                   <div>
                     <h2 className="text-lg font-semibold text-gray-800">
