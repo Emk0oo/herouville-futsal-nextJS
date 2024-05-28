@@ -98,36 +98,41 @@ const ActualiteForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2 mt-10"
-    >
-      {Object.entries(formFields).map(([name, config]) => (
-        <div key={name} className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            {config.label}
-          </label>
-          <input
-            type={config.type}
-            name={name}
-            placeholder={config.placeholder}
-            value={config.type !== "file" ? formData[name] : ""}
-            onChange={handleChange}
-            required={config.type !== "file"}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-          {config.type === "file" && imageFile && (
-            <p className="text-sm text-gray-600 mt-2">{imageFile.name}</p>
-          )}
-        </div>
-      ))}
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-      >
-        Créer l&apos;article
-      </button>
-    </form>
+    <div id='addArticleContainer' className='w-full max-w-lg mx-auto mt-10 p-8 bg-white shadow-xl rounded-lg'>
+      <div id='addArticleHeader' className='mb-6 border-b pb-4'>
+        <h1 id='titreCard' className='text-2xl font-semibold text-gray-700'>Créer un article</h1>
+      </div>
+      <div id='addArticleContent'>
+        <form id='addArticleForm' className='flex flex-col space-y-4' onSubmit={handleSubmit}>
+          {Object.entries(formFields).map(([name, config]) => (
+            <div key={name}>
+              <label htmlFor={name} className='block text-sm font-medium text-gray-700'>{config.label}</label>
+              <input
+                type={config.type}
+                id={name}
+                name={name}
+                placeholder={config.placeholder}
+                value={config.type !== "file" ? formData[name] : ""}
+                onChange={handleChange}
+                required={config.type !== "file"}
+                className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-indigo-200 focus:border-indigo-300'
+              />
+              {config.type === "file" && imageFile && (
+                <p className='text-sm text-gray-600 mt-2'>{imageFile.name}</p>
+              )}
+            </div>
+          ))}
+          <div>
+            <button
+              type='submit'
+              className='w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+            >
+              Créer l&apos;article
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 
